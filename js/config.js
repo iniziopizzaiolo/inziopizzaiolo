@@ -9,6 +9,12 @@ const INIZIO = {
   // --- CONTACTO ---
   whatsapp: '34666081452',
 
+  // --- VIDEO HERO (opcional) ---
+  // Pega aquí la URL de embed de Vimeo o Cloudflare Stream cuando tengas el reel.
+  // Vacío = el hero usa la foto actual.
+  // Ejemplo Vimeo: 'https://player.vimeo.com/video/TU_ID?background=1&autoplay=1&muted=1&loop=1'
+  videoHero: '/video/inizio-experiencia-taller.mp4',
+
   // --- PRECIO por defecto ---
   precio: '45',
 
@@ -44,12 +50,37 @@ const INIZIO = {
     airbnb:             '',       // URL completa de tu experiencia en Airbnb
   },
 
-  // --- ESTADISTICAS (actualiza cuando tengas datos reales) ---
+  // --- ESTADISTICAS (credenciales verificables) ---
   stats: {
-    personas:     '50+',
-    experiencias: '20+',
-    valoracion:   '5.0',
+    anos:       '11+',
+    puesto:     '3°',
+    mundial:    'Top 20',
+    valoracion: '5.0 ★',
   },
+
+  // --- TESTIMONIOS ---
+  // foto: ruta a la imagen del asistente (ej: 'img/testimonios/maria.jpg')
+  //       deja '' o quita el campo para usar la inicial del nombre como avatar
+  testimonios: [
+    {
+      texto:  'Una experiencia increíble. Aprendí más en 3 horas que en años intentando hacer pizza en casa. Rodny explica con pasión real y la pizza estaba de campeonato.',
+      nombre: 'María',
+      fuente: 'Experiencia Inizio',
+      foto:   '',
+    },
+    {
+      texto:  'Lo hicimos para el cumpleaños de mi pareja y fue el mejor regalo posible. El ambiente, la pizza, Rodny... todo diez. Ya hemos reservado otra vez.',
+      nombre: 'Carlos',
+      fuente: 'Experiencia Privada',
+      foto:   '',
+    },
+    {
+      texto:  'Fui sola sin conocer a nadie y salí con nuevos amigos. El grupo pequeño hace que sea muy cercano. Y la pizza... es que no hay palabras. Técnica real.',
+      nombre: 'Laura',
+      fuente: 'Experiencia Inizio',
+      foto:   '',
+    },
+  ],
 
 };
 
@@ -132,7 +163,99 @@ function renderFechas() {
   }).join('');
 }
 
+function renderSchemaEventos() {
+  const schemaEl = document.getElementById('schema-eventos');
+  if (!schemaEl) return;
+
+  const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+  const eventos = [];
+
+  Object.entries(INIZIO.fechas).forEach(([clave, lista]) => {
+    const [year, monthRaw] = clave.split('-').map(Number);
+    lista.forEach(f => {
+      const fecha = new Date(year, monthRaw - 1, f.dia);
+      if (fecha < hoy) return;
+      const pad  = n => String(n).padStart(2, '0');
+      const iso  = `${year}-${pad(monthRaw)}-${pad(f.dia)}T${f.hora}:00`;
+      eventos.push({
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": `Experiencia Inizio — ${f.tipo}`,
+        "description": "Vive la experiencia completa de un pizzaiolo napolitano en Madrid. Amasas, estiras, horneas y te comes tu propia pizza. Máximo 8 personas.",
+        "startDate": iso,
+        "eventStatus": f.plazas === 0 ? "https://schema.org/EventSoldOut" : "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Inizio — Madrid",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Madrid",
+            "postalCode": "28005",
+            "addressCountry": "ES"
+          }
+        },
+        "organizer": {
+          "@type": "Person",
+          "name": "Rodny López",
+          "url": "https://iniziopizzaiolo.com"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": f.precio ? f.precio.replace('€','') : INIZIO.precio,
+          "priceCurrency": "EUR",
+          "availability": f.plazas === 0 ? "https://schema.org/SoldOut" : "https://schema.org/LimitedAvailability",
+          "url": "https://iniziopizzaiolo.com/#fechas"
+        },
+        "image": "https://iniziopizzaiolo.com/img/taller-grupo-feliz-delantales.jpg"
+      });
+    });
+  });
+
+  schemaEl.textContent = JSON.stringify(eventos);
+}
+
+function renderTestimonios() {
+  const container = document.getElementById('testimonios-grid');
+  if (!container) return;
+
+  container.innerHTML = INIZIO.testimonios.map(t => {
+    const inicial = t.nombre.charAt(0).toUpperCase();
+    const avatar  = t.foto
+      ? `<img src="${t.foto}" alt="Foto de ${t.nombre}" loading="lazy">`
+      : inicial;
+    return `
+      <div class="resena">
+        <div class="resena__estrellas">★★★★★</div>
+        <p class="resena__texto">"${t.texto}"</p>
+        <div class="resena__autor">
+          <div class="resena__avatar">${avatar}</div>
+          <div>
+            <span class="resena__nombre">${t.nombre}</span>
+            <span class="resena__fuente">${t.fuente}</span>
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+
+  // Video hero (si está configurado)
+  if (INIZIO.videoHero) {
+    const heroBg = document.querySelector('.hero__bg');
+    const heroImg = heroBg && heroBg.querySelector('.hero__bg-img');
+    if (heroImg) {
+      const video = document.createElement('video');
+      video.src = INIZIO.videoHero;
+      video.autoplay = true;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.className = 'hero__bg-video';
+      heroBg.replaceChild(video, heroImg);
+    }
+  }
 
   // Actualizar links WhatsApp con numero de config
   document.querySelectorAll('a[href*="wa.me/"]').forEach(link => {
@@ -165,12 +288,19 @@ document.addEventListener('DOMContentLoaded', () => {
     `).join('');
   }
 
+  // Schema eventos dinámicos
+  renderSchemaEventos();
+
+  // Testimonios
+  renderTestimonios();
+
   // Estadisticas
   const statsContainer = document.getElementById('stats-contador');
   if (statsContainer) {
-    statsContainer.querySelector('[data-stat="personas"]')     && (statsContainer.querySelector('[data-stat="personas"]').textContent     = INIZIO.stats.personas);
-    statsContainer.querySelector('[data-stat="experiencias"]') && (statsContainer.querySelector('[data-stat="experiencias"]').textContent  = INIZIO.stats.experiencias);
-    statsContainer.querySelector('[data-stat="valoracion"]')   && (statsContainer.querySelector('[data-stat="valoracion"]').textContent   = INIZIO.stats.valoracion);
+    Object.entries(INIZIO.stats).forEach(([key, val]) => {
+      const el = statsContainer.querySelector(`[data-stat="${key}"]`);
+      if (el) el.textContent = val;
+    });
   }
 });
 
