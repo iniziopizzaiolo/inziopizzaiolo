@@ -73,3 +73,51 @@
 .lp-badge-soon{font-family:'Inter',sans-serif;font-size:12px;padding:6px 16px;border:1px solid #6aad6a;border-radius:100px;color:#294C29;background:#e8f5e8}
 @media(max-width:700px){.lp-grid2,.lp-incluye,.lp-testimonios{grid-template-columns:1fr}.lp-stats{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.lp-stats{grid-template-columns:1fr}}
+
+/* COLOR POR SECCIÓN */
+
+/* TALLER — crema cálido */
+.lp-taller .lp-hero {
+  background: #FEEEC1;
+}
+.lp-taller .lp-hero h1,
+.lp-taller .lp-hero .lp-hero-sub {
+  color: #294C29;
+}
+.lp-taller .lp-hero-tag {
+  color: #7F1100;
+  border-color: rgba(127,17,0,0.3);
+}
+.lp-taller .lp-breadcrumb,
+.lp-taller .lp-breadcrumb a {
+  color: rgba(41,76,41,0.6);
+}
+.lp-taller .lp-breadcrumb span { color: #7F1100; }
+.lp-taller .lp-stat { background: rgba(41,76,41,0.08); }
+.lp-taller .lp-stat-num { color: #7F1100; }
+.lp-taller .lp-stat-label { color: rgba(41,76,41,0.7); }
+.lp-taller .lp-launch-bar { background: #7F1100; }
+
+/* CATERING — rojo teja */
+.lp-catering .lp-hero { background: #7F1100; }
+.lp-catering .lp-stat { background: rgba(254,238,193,0.1); }
+.lp-catering .lp-stat-num { color: #FEEEC1; }
+.lp-catering .lp-stat-label { color: rgba(254,238,193,0.6); }
+.lp-catering .lp-hero-tag {
+  color: #E7AF67;
+  border-color: rgba(231,175,103,0.4);
+}
+.lp-catering .lp-breadcrumb a { color: rgba(254,238,193,0.6); }
+.lp-catering .lp-breadcrumb span { color: #E7AF67; }
+
+/* CENA — verde oscuro (ya es el default, reforzamos) */
+.lp-cena .lp-hero { background: #294C29; }
+.lp-cena .lp-stat-num { color: #E7AF67; }
+.lp-cena .lp-stat-label { color: rgba(254,238,193,0.6); }
+
+/* CONTACTO — dorado */
+.lp-cta { background: #E7AF67; }
+.lp-cta h2 { color: #294C29; }
+.lp-cta p { color: rgba(41,76,41,0.75); }
+.lp-cta-tel { color: #7F1100; }
+.lp-cta-sub { color: rgba(41,76,41,0.6); }
