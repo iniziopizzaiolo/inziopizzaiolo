@@ -121,3 +121,17 @@
 .lp-cta p { color: rgba(41,76,41,0.75); }
 .lp-cta-tel { color: #7F1100; }
 .lp-cta-sub { color: rgba(41,76,41,0.6); }
+
+/* NAV color por sección */
+.lp-taller .nav { background: #FEEEC1; }
+.lp-catering .nav { background: #7F1100; }
+.lp-catering .nav .nav__links a { color: #FEEEC1; }
+.lp-catering .nav .nav__links a:hover { color: #E7AF67; }
+.lp-cena .nav { background: #294C29; }
+.lp-cena .nav .nav__links a { color: #FEEEC1; }
+.lp-cena .nav .nav__links a:hover { color: #E7AF67; }
+
+/* HERO forzar color correcto por sección */
+.lp-taller .lp-hero { background: #FEEEC1 !important; }
+.lp-catering .lp-hero { background: #7F1100 !important; }
+.lp-cena .lp-hero { background: #294C29 !important; }
