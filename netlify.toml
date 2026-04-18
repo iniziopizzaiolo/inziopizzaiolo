@@ -13,6 +13,13 @@
   to = "/"
   status = 301
 
+# Redirect .html → extensionless (evita contenido duplicado)
+[[redirects]]
+  from = "/*.html"
+  to = "/:splat"
+  status = 301
+  force = true
+
 # Headers de seguridad para todas las páginas
 [[headers]]
   for = "/*"
