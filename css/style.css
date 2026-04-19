@@ -807,3 +807,280 @@ h1, h2, h3, h4 {
 
   .hero { padding-top: 100px; }
 }
+
+/* ============================================
+   SOBRE RODNY
+   ============================================ */
+
+.sobre-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 4rem 0;
+}
+
+.sobre-eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted, #888);
+  margin-bottom: 1rem;
+}
+
+.sobre-intro {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary, #555);
+  margin-bottom: 2rem;
+}
+
+.sobre-credentials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.credential-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 1rem;
+  border: 1px solid var(--border-color, #e5e5e5);
+  border-radius: 8px;
+}
+
+.credential-item strong {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-primary, #c8372d);
+}
+
+.credential-item span {
+  font-size: 0.8rem;
+  color: var(--color-muted, #888);
+  line-height: 1.3;
+}
+
+.sobre-hero-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.sobre-seccion {
+  padding: 4rem 0;
+  border-top: 1px solid var(--border-color, #e5e5e5);
+}
+
+.sobre-seccion h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.sobre-seccion p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--color-text-secondary, #444);
+  max-width: 680px;
+  margin-bottom: 1.2rem;
+}
+
+.campeonato-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.campeonato-grid img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.filosofia-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.filosofia-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.filosofia-item p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary, #555);
+}
+
+.sobre-filosofia {
+  background: var(--color-bg-soft, #f9f6f1);
+}
+
+.sobre-inizio p {
+  max-width: 640px;
+}
+
+.sobre-cta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.sobre-cta-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border-color, #e5e5e5);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.sobre-cta-card:hover {
+  border-color: var(--color-primary, #c8372d);
+}
+
+.sobre-cta-card strong {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text, #1a1a1a);
+}
+
+.sobre-cta-card span {
+  font-size: 0.85rem;
+  color: var(--color-muted, #888);
+}
+
+.sobre-contacto {
+  padding: 5rem 0;
+  text-align: center;
+  border-top: 1px solid var(--border-color, #e5e5e5);
+}
+
+.sobre-contacto h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.sobre-contacto p {
+  font-size: 1.1rem;
+  color: var(--color-muted, #888);
+  margin-bottom: 2rem;
+}
+
+.sobre-social {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.sobre-social a {
+  color: var(--color-muted, #888);
+  text-decoration: none;
+}
+
+.sobre-social a:hover {
+  color: var(--color-primary, #c8372d);
+}
+
+/* ============================================
+   CROSS-LINKING — otras experiencias
+   ============================================ */
+
+.otras-experiencias {
+  padding: 4rem 0;
+  border-top: 1px solid var(--border-color, #e5e5e5);
+}
+
+.otras-experiencias h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.experiencias-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.experiencia-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color, #e5e5e5);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.experiencia-card:hover {
+  border-color: var(--color-primary, #c8372d);
+}
+
+.experiencia-card strong {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text, #1a1a1a);
+}
+
+.experiencia-card span {
+  font-size: 0.9rem;
+  color: var(--color-muted, #888);
+  line-height: 1.5;
+}
+
+.experiencia-link {
+  font-size: 0.9rem;
+  color: var(--color-primary, #c8372d) !important;
+  margin-top: 4px;
+}
+
+/* Responsive sobre-rodny + cross-linking */
+@media (max-width: 768px) {
+  .sobre-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  .sobre-hero-imagen {
+    order: -1;
+  }
+
+  .sobre-credentials {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .campeonato-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .campeonato-grid img {
+    height: 240px;
+  }
+
+  .filosofia-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sobre-cta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experiencias-grid {
+    grid-template-columns: 1fr;
+  }
+}
