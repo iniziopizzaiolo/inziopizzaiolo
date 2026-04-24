@@ -753,7 +753,7 @@ h1, h2, h3, h4 {
   .rodny__foto-placeholder { aspect-ratio: 16/9; max-height: 280px; }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .nav__links {
     position: fixed;
     top: 68px;

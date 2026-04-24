@@ -145,7 +145,7 @@
 .lp-cena .lp-hero { background: #294C29 !important; }
 
 /* NAV MOBILE — dropdown fondo oscuro en landings para que los links crema sean visibles */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .lp-catering .nav__links,
   .lp-cena .nav__links,
   .lp-taller .nav__links {
