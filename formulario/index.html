@@ -6,7 +6,33 @@
     <title>Reserva tu Taller de Pizza - Inizio Pizzaiolo</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
+        .form-nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            padding: 14px 24px;
+            background: #1a1a1a;
+            border-bottom: 1px solid #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 100;
+        }
+        .form-nav__logo {
+            color: #f5f0e8;
+            text-decoration: none;
+            font-family: Georgia, serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.08em;
+        }
+        .form-nav__back {
+            color: #888;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+        .form-nav__back:hover { color: #ccc; }
+
         html, body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #1a1a1a;
@@ -15,7 +41,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 80px 20px 20px;
         }
 
         .container {
@@ -234,6 +260,10 @@
     </style>
 </head>
 <body>
+    <nav class="form-nav">
+        <a href="/" class="form-nav__logo">inizio</a>
+        <a href="/taller/" class="form-nav__back">← Volver al taller</a>
+    </nav>
     <div class="container">
         <div class="header">
             <h1>Taller de Pizza</h1>
@@ -243,9 +273,8 @@
         <form id="formTaller" name="formTaller" netlify netlify-honeypot="bot-field" action="/formulario/gracias/">
             <input type="hidden" name="form-name" value="formTaller">
             <p style="display:none"><label>No rellenar: <input name="bot-field"></label></p>
-            <div class="info-box">
-                📅 <strong>Fechas disponibles:</strong> 13, 14, 20, 21, 27, 28 de mayo a las 20:00h<br>
-                👥 Mínimo 4 personas por grupo | 💰 45€ por persona
+            <div class="info-box" id="infoFechas">
+                📅 Cargando fechas...
             </div>
 
             <!-- Nombre -->
@@ -293,12 +322,6 @@
                     <label for="fecha">Fecha del taller <span class="required">*</span></label>
                     <select id="fecha" name="fecha" required>
                         <option value="">Selecciona una fecha</option>
-                        <option value="13-mayo">13 de mayo</option>
-                        <option value="14-mayo">14 de mayo</option>
-                        <option value="20-mayo">20 de mayo</option>
-                        <option value="21-mayo">21 de mayo</option>
-                        <option value="27-mayo">27 de mayo</option>
-                        <option value="28-mayo">28 de mayo</option>
                     </select>
                     <div class="error" id="errorFecha">Selecciona una fecha</div>
                 </div>
@@ -386,9 +409,47 @@
         </form>
     </div>
 
+    <script src="../js/config.js"></script>
     <script>
+        // --- Poblar fechas desde config.js ---
+        (function() {
+            const selectFecha = document.getElementById('fecha');
+            const infoBox     = document.getElementById('infoFechas');
+            const sesiones    = [];
+
+            Object.entries(INIZIO.fechas).forEach(([clave, lista]) => {
+                const [year, monthRaw] = clave.split('-').map(Number);
+                lista.forEach(f => {
+                    const fecha = new Date(year, monthRaw - 1, f.dia);
+                    sesiones.push({ ...f, year, month: monthRaw, fecha });
+                });
+            });
+
+            const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+            const proximas = sesiones
+                .filter(f => f.fecha >= hoy && f.plazas > 0)
+                .sort((a, b) => a.fecha - b.fecha);
+
+            if (proximas.length === 0) {
+                infoBox.innerHTML = '📅 Sin fechas disponibles ahora mismo. <a href="https://wa.me/' + INIZIO.whatsapp + '" target="_blank" style="color:#c8372d">Escríbenos por WhatsApp</a> para la próxima fecha.';
+                const opt = document.createElement('option');
+                opt.value = 'consultar';
+                opt.textContent = 'Sin fechas — contactar por WhatsApp';
+                selectFecha.appendChild(opt);
+            } else {
+                const fechasStr = proximas.map(f => f.dia + ' ' + MESES_ES[f.month - 1]).join(', ');
+                infoBox.innerHTML = '📅 <strong>Fechas disponibles:</strong> ' + fechasStr + ' a las 20:00h<br>👥 Máx. 10 personas por grupo | 💰 ' + INIZIO.precio + '€ por persona';
+                proximas.forEach(f => {
+                    const opt = document.createElement('option');
+                    opt.value = f.dia + '-' + MESES_ES[f.month - 1].toLowerCase();
+                    opt.textContent = DIAS_ES[f.fecha.getDay()] + ' ' + f.dia + ' de ' + MESES_ES[f.month - 1] + ' · ' + f.hora + 'h';
+                    selectFecha.appendChild(opt);
+                });
+            }
+        })();
+
+        // --- Envío Netlify ---
         const form = document.getElementById('formTaller');
-        const successMsg = document.getElementById('successMsg');
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -406,13 +467,14 @@
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams(datos).toString()
             })
-            .then(() => {
+            .then(response => {
+                if (!response.ok) throw new Error('Error ' + response.status);
                 window.location.href = '/formulario/gracias/';
             })
             .catch(() => {
                 btn.disabled = false;
                 btn.textContent = 'Reservar plaza';
-                alert('Hubo un error. Escríbenos directamente por WhatsApp: +34 666 08 14 52');
+                alert('Hubo un error al enviar. Escríbenos directamente por WhatsApp: +34 666 08 14 52');
             });
         });
 

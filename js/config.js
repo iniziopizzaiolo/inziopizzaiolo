@@ -27,10 +27,13 @@ const INIZIO = {
   //   tipo   → "Taller" | "Cena Privada" | "Catering"
   //   precio → "45€" (si es distinto al precio por defecto)
   fechas: {
-    "2026-04": [
-      { dia: 10, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
-      { dia: 11, hora: "19:30", plazas: 8, max: 8, tipo: "Taller" },
-      { dia: 25, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+    "2026-05": [
+      { dia: 13, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 14, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 20, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 21, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 27, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 28, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
     ],
   },
 
