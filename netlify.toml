@@ -13,6 +13,12 @@
   to = "/"
   status = 301
 
+# Rewrite /articulos → articulos.html (evita conflicto entre archivo y carpeta /articulos/)
+[[redirects]]
+  from = "/articulos"
+  to = "/articulos.html"
+  status = 200
+
 # Redirect .html → extensionless (evita contenido duplicado)
 [[redirects]]
   from = "/*.html"
