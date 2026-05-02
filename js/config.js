@@ -10,7 +10,7 @@ const INIZIO = {
   whatsapp: '34666081452',
 
   // --- PRECIO por defecto ---
-  precio: '45',
+  precio: '50',
 
   // --- FORMULARIO DE RESERVA (Google Form) ---
   // No toques esto salvo que cambies el formulario
@@ -25,7 +25,7 @@ const INIZIO = {
   //   plazas → plazas disponibles (pon 0 para marcar COMPLETO)
   //   max    → aforo máximo de la sesión
   //   tipo   → "Taller" | "Cena Privada" | "Catering"
-  //   precio → "45€" (si es distinto al precio por defecto)
+  //   precio → "50€" (si es distinto al precio por defecto)
   fechas: {
     "2026-05": [
       { dia: 13, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
