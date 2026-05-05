@@ -17,6 +17,9 @@ const INIZIO = {
   formId: '1FAIpQLSdMosfVxPR9y6CqRbgl_c0_7HVPA_HkGcF9OS3nilgQnmFw4w',
   formEntryFecha: '2007491277',   // entry ID del campo "Fecha del taller"
 
+  // --- RESEÑAS GOOGLE ---
+  googleReviews: 'https://g.page/r/CR4h0K7Cjp0IEAE/review',
+
   // --- PROXIMAS FECHAS ---
   // Organizado por mes: "YYYY-MM": [ lista de sesiones ]
   // Campos por sesión:
@@ -26,6 +29,7 @@ const INIZIO = {
   //   max    → aforo máximo de la sesión
   //   tipo   → "Taller" | "Cena Privada" | "Catering"
   //   precio → "50€" (si es distinto al precio por defecto)
+  // PATRÓN: miércoles y jueves cada semana a las 20:00h
   fechas: {
     "2026-05": [
       { dia: 13, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
@@ -34,6 +38,38 @@ const INIZIO = {
       { dia: 21, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
       { dia: 27, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
       { dia: 28, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+    ],
+    "2026-06": [
+      { dia:  3, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia:  4, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 10, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 11, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 17, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 18, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 24, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 25, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+    ],
+    "2026-07": [
+      { dia:  1, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia:  2, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia:  8, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia:  9, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 15, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 16, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 22, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 23, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 29, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 30, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+    ],
+    "2026-08": [
+      { dia:  5, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia:  6, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 12, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 13, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 19, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 20, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 26, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
+      { dia: 27, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
     ],
   },
 
@@ -141,6 +177,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('a[href*="wa.me/"]').forEach(link => {
     link.href = link.href.replace(/wa\.me\/[^?]+/, `wa.me/${INIZIO.whatsapp}`);
   });
+
+  // Actualizar link de reseñas Google
+  const btnResena = document.getElementById('btn-resena-google');
+  if (btnResena) btnResena.href = INIZIO.googleReviews;
 
   // Renderizar proximas fechas
   renderFechas();
