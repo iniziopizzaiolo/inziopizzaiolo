@@ -7,7 +7,7 @@
 const INIZIO = {
 
   // --- CONTACTO ---
-  whatsapp: '34666081452',
+  whatsapp: '34614364778',
 
   // --- PRECIO por defecto ---
   precio: '50',
