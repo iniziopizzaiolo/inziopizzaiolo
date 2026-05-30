@@ -10,7 +10,7 @@ const INIZIO = {
   whatsapp: '34614364778',
 
   // --- PRECIO por defecto ---
-  precio: '50',
+  precio: '60',
 
   // --- FORMULARIO DE RESERVA (Google Form) ---
   // No toques esto salvo que cambies el formulario
@@ -173,9 +173,26 @@ function renderFechas() {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Actualizar links WhatsApp con numero de config
+  // Actualizar links WhatsApp con numero de config + tracking de conversión
   document.querySelectorAll('a[href*="wa.me/"]').forEach(link => {
     link.href = link.href.replace(/wa\.me\/[^?]+/, `wa.me/${INIZIO.whatsapp}`);
+    link.addEventListener('click', function() {
+      // GA4 event
+      if (typeof gtag === 'function') {
+        gtag('event', 'click_whatsapp', {
+          event_category: 'contacto',
+          event_label: link.closest('section')?.id || 'general',
+          page_path: window.location.pathname
+        });
+      }
+      // Meta Pixel event
+      if (typeof fbq === 'function') {
+        fbq('track', 'Contact', { content_name: 'WhatsApp Click', content_category: window.location.pathname });
+      }
+      // GTM dataLayer event
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'whatsapp_click', click_section: link.closest('section')?.id || 'general', click_page: window.location.pathname });
+    });
   });
 
   // Actualizar link de reseñas Google
