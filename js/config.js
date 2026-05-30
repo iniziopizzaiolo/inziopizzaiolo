@@ -18,7 +18,7 @@ const INIZIO = {
   formEntryFecha: '2007491277',   // entry ID del campo "Fecha del taller"
 
   // --- RESEÑAS GOOGLE ---
-  googleReviews: 'https://g.page/r/CR4h0K7Cjp0IEAE/review',
+  googleReviews: 'https://g.page/r/CR4h0K7Cjp0IEBM/review',
 
   // --- PROXIMAS FECHAS ---
   // Organizado por mes: "YYYY-MM": [ lista de sesiones ]
@@ -201,6 +201,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Renderizar proximas fechas
   renderFechas();
+
+  // Auto-rellenar próxima fecha disponible en botones genéricos del taller
+  const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+  const proximaFecha = Object.entries(INIZIO.fechas)
+    .flatMap(([clave, lista]) => {
+      const [year, monthRaw] = clave.split('-').map(Number);
+      return lista.map(f => ({ ...f, year, month: monthRaw, fecha: new Date(year, monthRaw - 1, f.dia) }));
+    })
+    .filter(f => f.fecha >= hoy && f.plazas > 0)
+    .sort((a, b) => a.fecha - b.fecha)[0];
+
+  if (proximaFecha) {
+    const url = buildFormUrl(proximaFecha.year, proximaFecha.month, proximaFecha.dia);
+    ['btn-inscribirse-hero', 'btn-inscribirse-cta'].forEach(id => {
+      const btn = document.getElementById(id);
+      if (btn) btn.href = url;
+    });
+  }
 
   // Renderizar redes sociales si existe el contenedor
   const redesContainer = document.getElementById('redes-sociales');
