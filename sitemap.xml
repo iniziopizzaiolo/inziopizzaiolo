@@ -6,42 +6,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://iniziopizzaiolo.com/articulos.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://iniziopizzaiolo.com/articulos/fermentacion-pizza-napolitana.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iniziopizzaiolo.com/articulos/harina-pizza-napolitana.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iniziopizzaiolo.com/articulos/pizza-en-casa.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iniziopizzaiolo.com/articulos/tomate-san-marzano.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://iniziopizzaiolo.com/articulos/mozzarella-fior-di-latte.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://iniziopizzaiolo.com/taller/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://iniziopizzaiolo.com/cena/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -51,7 +16,47 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://iniziopizzaiolo.com/politica-privacidad.html</loc>
+    <loc>https://iniziopizzaiolo.com/cena/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://iniziopizzaiolo.com/sobre-rodny/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iniziopizzaiolo.com/articulos</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://iniziopizzaiolo.com/articulos/fermentacion-pizza-napolitana</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iniziopizzaiolo.com/articulos/harina-pizza-napolitana</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iniziopizzaiolo.com/articulos/pizza-en-casa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iniziopizzaiolo.com/articulos/tomate-san-marzano</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iniziopizzaiolo.com/articulos/mozzarella-fior-di-latte</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://iniziopizzaiolo.com/politica-privacidad</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
