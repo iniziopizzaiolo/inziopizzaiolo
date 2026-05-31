@@ -10,7 +10,7 @@ No somos un restaurante. Operamos en tres formatos: talleres participativos, cen
 ## Servicios
 
 ### Taller de pizza napolitana
-- Precio: 50€ por persona (precio de lanzamiento)
+- Precio: 60€ por persona (precio de lanzamiento)
 - Duración: 2 horas
 - Máximo: 10 personas por sesión
 - Formato: el participante amasa, estira, hornea y come su propia pizza
