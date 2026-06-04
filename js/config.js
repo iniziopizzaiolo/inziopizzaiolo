@@ -25,7 +25,7 @@ const INIZIO = {
   //   plazas → plazas disponibles (pon 0 para marcar COMPLETO)
   //   max    → aforo máximo de la sesión
   //   tipo   → "Taller" | "Cena Privada" | "Catering"
-  //   precio → "50€" (si es distinto al precio por defecto)
+  //   precio → "60€" (si es distinto al precio por defecto)
   fechas: {
     "2026-04": [
       { dia: 10, hora: "20:00", plazas: 8, max: 8, tipo: "Taller" },
