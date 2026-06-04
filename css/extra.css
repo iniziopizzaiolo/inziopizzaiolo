@@ -171,6 +171,8 @@
 .articulo-cta { background: var(--verde); border-radius: var(--radius); padding: 36px 32px; margin-top: 48px; text-align: center; }
 .articulo-cta h3 { font-family: 'Cormorant Garamond', Georgia, serif; color: var(--crema); font-size: 1.5rem; margin-bottom: 12px; }
 .articulo-cta p { color: rgba(254,238,193,.8); margin-bottom: 24px; }
+.articulo-cta__link { display: inline-block; margin-top: 16px; color: var(--crema); opacity: .75; font-size: .9rem; text-decoration: underline; }
+.articulo-cta__link:hover { opacity: 1; }
 
 /* ---- POLITICA PRIVACIDAD ---- */
 .legal-content { padding: 64px 0 96px; }
