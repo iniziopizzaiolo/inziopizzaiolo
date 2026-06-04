@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="color-scheme" content="only light"/>
 
-  <!-- SEO & Social -->
   <title>Inizio Pizzaiolo · Rodny López · Madrid</title>
-  <meta name="description" content="Maestro Pizzaiolo en Madrid. Talleres de pizza, cenas privadas y catering con Pizza Show Experience. 2º puesto Campeonato Mundial Pizza DOC 2024."/>
+  <meta name="description" content="Maestro Pizzaiolo en Madrid. Talleres de pizza, cenas privadas y catering con Pizza Show Experience. Top 3 Campeonato Mundial Pizza DOC 2024 &amp; 2025."/>
   <meta property="og:title" content="Inizio Pizzaiolo · Rodny López"/>
   <meta property="og:description" content="Talleres, cenas privadas y catering con Pizza Show Experience en Madrid."/>
   <meta property="og:image" content="https://iniziopizzaiolo.com/img/og-preview.jpg"/>
@@ -18,12 +17,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"/>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      color-scheme: only light;
-    }
+    :root { color-scheme: only light; }
 
     html { background: #FEEEC1 !important; }
 
@@ -35,7 +33,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 40px 18px 64px;
+      padding: 44px 18px 72px;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -50,77 +48,91 @@
       align-items: center;
     }
 
-    /* HEADER */
+    /* ── HEADER ── */
     .header {
       text-align: center;
-      margin-bottom: 28px;
+      margin-bottom: 32px;
       animation: rise .65s ease both;
     }
 
     .logo-img {
-      width: 200px;
-      height: 200px;
-      object-fit: contain;
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
       display: block;
-      margin: 0 auto 4px;
-      mix-blend-mode: multiply;
+      margin: 0 auto 16px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(127,17,0,.22);
+    }
+
+    .name {
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+      color: #2a1505;
+      margin-bottom: 4px;
     }
 
     .tagline {
       font-size: .78rem;
-      letter-spacing: .28em;
+      letter-spacing: .26em;
       text-transform: uppercase;
       color: #C8922A;
       opacity: .85;
+      margin-bottom: 14px;
     }
 
-    /* Credencial destacada */
     .credential {
-      display: inline-block;
-      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
       background: #7F1100;
       color: #FEEEC1;
-      font-size: .7rem;
-      letter-spacing: .12em;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .08em;
       text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: 20px;
-      font-style: italic;
+      padding: 7px 16px;
+      border-radius: 24px;
+      font-style: normal;
+      box-shadow: 0 2px 10px rgba(127,17,0,.25);
     }
+
+    .credential-icon { font-size: .85rem; }
 
     .rule {
-      width: 36px;
+      width: 40px;
       height: 1px;
       background: #E7AF67;
-      margin: 14px auto 0;
-      opacity: .6;
+      margin: 18px auto 0;
+      opacity: .55;
     }
 
-    /* LABEL */
+    /* ── LABELS ── */
     .label {
       align-self: flex-start;
-      font-size: .68rem;
-      letter-spacing: .32em;
+      font-size: .65rem;
+      letter-spacing: .36em;
       text-transform: uppercase;
       color: #C8922A;
-      opacity: .8;
-      margin: 28px 0 10px 2px;
+      opacity: .75;
+      margin: 28px 0 10px 4px;
     }
 
-    /* STACK */
+    /* ── CARDS ── */
     .stack {
       width: 100%;
       display: flex;
       flex-direction: column;
-      gap: 9px;
+      gap: 8px;
     }
 
     .card {
       display: flex;
       align-items: center;
       gap: 14px;
-      padding: 15px 18px;
-      border-radius: 6px;
+      padding: 14px 18px;
+      border-radius: 8px;
       text-decoration: none;
       transition: transform .2s ease, box-shadow .2s ease;
       animation: rise .55s ease both;
@@ -136,93 +148,125 @@
       background: #E7AF67;
       transform: scaleY(0);
       transform-origin: bottom;
-      transition: transform .25s ease;
+      transition: transform .22s ease;
       border-radius: 3px 0 0 3px;
     }
-    .card:hover { transform: translateX(5px); }
+    .card:hover { transform: translateX(5px); box-shadow: 0 4px 16px rgba(0,0,0,.08); }
     .card:hover::after { transform: scaleY(1); }
 
+    /* variantes */
     .card.taller {
       background-color: #7F1100 !important;
       color: #FEEEC1 !important;
     }
     .card.taller:hover { box-shadow: 0 6px 24px rgba(127,17,0,.3); }
     .card.taller .icon { background: rgba(255,255,255,.12) !important; }
-    .card.taller .desc, .card.taller .title, .card.taller .arrow { color: #FEEEC1 !important; }
-    .card.taller .desc { opacity: .75; }
+    .card.taller .title,
+    .card.taller .desc,
+    .card.taller .arrow { color: #FEEEC1 !important; }
+    .card.taller .desc { opacity: .72; }
     .card.taller::after { background: #E7AF67; }
 
     .card.catering {
-      background-color: rgba(200,146,42,.15) !important;
-      border: 1px solid rgba(200,146,42,.4);
-      color: #2a1505 !important;
+      background-color: rgba(200,146,42,.13) !important;
+      border: 1px solid rgba(200,146,42,.38);
     }
-    .card.catering:hover { background-color: rgba(200,146,42,.25) !important; }
+    .card.catering:hover { background-color: rgba(200,146,42,.22) !important; }
 
     .card.cena {
-      background-color: rgba(41,76,41,.12) !important;
-      border: 1px solid rgba(41,76,41,.3);
-      color: #2a1505 !important;
+      background-color: rgba(41,76,41,.10) !important;
+      border: 1px solid rgba(41,76,41,.28);
     }
-    .card.cena:hover { background-color: rgba(41,76,41,.22) !important; }
+    .card.cena:hover { background-color: rgba(41,76,41,.18) !important; }
 
     .card.social {
-      background-color: rgba(127,17,0,.08) !important;
-      border: 1px solid rgba(127,17,0,.18);
-      color: #2a1505 !important;
+      background-color: rgba(127,17,0,.07) !important;
+      border: 1px solid rgba(127,17,0,.16);
     }
-    .card.social:hover { background-color: rgba(127,17,0,.15) !important; }
+    .card.social:hover { background-color: rgba(127,17,0,.13) !important; }
 
     .card.contact {
-      background-color: rgba(200,146,42,.1) !important;
-      border: 1px solid rgba(200,146,42,.25);
-      color: #2a1505 !important;
+      background-color: rgba(200,146,42,.09) !important;
+      border: 1px solid rgba(200,146,42,.22);
     }
-    .card.contact:hover { background-color: rgba(200,146,42,.2) !important; }
+    .card.contact:hover { background-color: rgba(200,146,42,.18) !important; }
 
+    /* elementos internos */
     .icon {
       width: 40px; height: 40px;
       border-radius: 50%;
-      background: rgba(200,146,42,.18) !important;
+      background: rgba(200,146,42,.16) !important;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
       font-size: 1.1rem;
     }
 
-    .info { flex: 1; }
-    .title { font-size: .98rem; font-weight: 600; letter-spacing: .03em; line-height: 1.2; color: #2a1505; }
-    .desc { font-size: .78rem; font-style: italic; opacity: .6; margin-top: 2px; color: #2a1505; }
-    .arrow { font-size: .75rem; opacity: .32; color: #2a1505; transition: opacity .2s, transform .2s; }
-    .card:hover .arrow { opacity: .7; transform: translateX(3px); }
+    .info { flex: 1; min-width: 0; }
 
+    .title {
+      font-size: .97rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+      line-height: 1.2;
+      color: #2a1505;
+    }
+
+    .desc {
+      font-size: .76rem;
+      font-style: italic;
+      opacity: .58;
+      margin-top: 2px;
+      color: #2a1505;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .arrow {
+      font-size: .75rem;
+      opacity: .28;
+      color: #2a1505;
+      transition: opacity .2s, transform .2s;
+      flex-shrink: 0;
+    }
+    .card:hover .arrow { opacity: .65; transform: translateX(3px); }
+
+    /* delays animación */
+    .stack .card:nth-child(1) { animation-delay: .06s; }
+    .stack .card:nth-child(2) { animation-delay: .12s; }
+    .stack .card:nth-child(3) { animation-delay: .18s; }
+    .stack .card:nth-child(4) { animation-delay: .24s; }
+
+    /* ── FOOTER ── */
     .footer {
-      margin-top: 44px;
-      font-size: .65rem;
-      letter-spacing: .25em;
+      margin-top: 48px;
+      font-size: .62rem;
+      letter-spacing: .26em;
       text-transform: uppercase;
       color: #2a1505;
-      opacity: .35;
+      opacity: .3;
       text-align: center;
     }
 
+    /* ── ANIMACIÓN ── */
     @keyframes rise {
-      from { opacity:0; transform: translateY(16px); }
-      to   { opacity:1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
-
-    .stack .card:nth-child(1) { animation-delay: .07s; }
-    .stack .card:nth-child(2) { animation-delay: .14s; }
-    .stack .card:nth-child(3) { animation-delay: .21s; }
-    .stack .card:nth-child(4) { animation-delay: .28s; }
   </style>
 </head>
+
 <body>
 <div class="wrap">
 
   <div class="header">
-    <img class="logo-img" src="/img/logo-crema-verde.jpg" alt="Inizio Pizzaiolo"/>
+    <img class="logo-img" src="/img/logo-rojo-crema.jpg" alt="Inizio Pizzaiolo"/>
+    <p class="name">Rodny López</p>
     <p class="tagline">Maestro Pizzaiolo · Madrid</p>
-    <span class="credential">🏆 Top 3 Mundial · Campeonato Pizza DOC 2024 &amp; 2025</span>
+    <span class="credential">
+      <span class="credential-icon">🏆</span>
+      Top 3 Mundial · Pizza DOC 2024 &amp; 2025
+    </span>
     <div class="rule"></div>
   </div>
 
