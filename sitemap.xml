@@ -56,6 +56,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://iniziopizzaiolo.com/catering-bodas/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://iniziopizzaiolo.com/articulos/taller-pizza-napolitana-madrid</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://iniziopizzaiolo.com/politica-privacidad</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

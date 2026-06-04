@@ -174,6 +174,15 @@
 .articulo-cta__link { display: inline-block; margin-top: 16px; color: var(--crema); opacity: .75; font-size: .9rem; text-decoration: underline; }
 .articulo-cta__link:hover { opacity: 1; }
 
+/* ---- FAQ ACORDEON (landing catering-bodas) ---- */
+.lp-faqs { display: flex; flex-direction: column; gap: 8px; margin-top: 24px; }
+.lp-faq { border: 1px solid rgba(0,0,0,.1); border-radius: 8px; overflow: hidden; }
+.lp-faq summary { padding: 16px 20px; font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+.lp-faq summary::-webkit-details-marker { display: none; }
+.lp-faq summary::after { content: '+'; font-size: 1.4rem; font-weight: 300; color: var(--rojo, #7F1100); flex-shrink: 0; margin-left: 12px; }
+.lp-faq[open] summary::after { content: '−'; }
+.lp-faq p { padding: 0 20px 16px; color: var(--gris, #555); line-height: 1.7; margin: 0; }
+
 /* ---- POLITICA PRIVACIDAD ---- */
 .legal-content { padding: 64px 0 96px; }
 .legal-content .container { max-width: 760px; }
