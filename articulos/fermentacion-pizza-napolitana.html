@@ -35,12 +35,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Fredoka:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/extra.css">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TR3HF8LR');</script>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHBN7B6LWV"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-YHBN7B6LWV');
+  </script>
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1017889490582215');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1017889490582215&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TR3HF8LR"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="../index.html" class="nav__logo">
+      <a href="../" class="nav__logo">
         <svg class="logo-svg" viewBox="0 0 150 44" xmlns="http://www.w3.org/2000/svg" aria-label="Inizio" role="img">
           <rect width="150" height="44" rx="22" fill="#294C29"/>
           <circle cx="22" cy="22" r="7.5" fill="none" stroke="#E7AF67" stroke-width="1.8"/>
@@ -53,7 +84,7 @@
       </button>
       <ul class="nav__links" id="navLinks">
         <li><a href="../index.html#formatos">Experiencias</a></li>
-        <li><a href="../articulos.html">Blog</a></li>
+        <li><a href="/articulos">Blog</a></li>
         <li>
           <a href="https://wa.me/34614364778?text=Hola!%20Quiero%20reservar%20mi%20plaza%20en%20la%20Experiencia%20Inizio%20%F0%9F%8D%95"
              class="btn btn--nav" target="_blank" rel="noopener">Reservar</a>
@@ -65,7 +96,7 @@
   <article class="articulo-single">
     <div class="articulo-single__header">
       <div class="container">
-        <a href="../articulos.html" class="articulo-single__back">← Volver al blog</a>
+        <a href="/articulos" class="articulo-single__back">← Volver al blog</a>
         <span class="articulo-card__cat">Técnica</span>
         <h1>Por qué la fermentación larga cambia todo en la pizza napolitana</h1>
         <p class="articulo-single__meta">Por <strong>Rodny López</strong> · Inizio Madrid · Técnica napolitana</p>
@@ -265,7 +296,7 @@
     <div class="container">
       <p class="section__label">Más artículos</p>
       <div class="articulos__grid">
-        <a href="harina-pizza-napolitana.html" class="articulo-card">
+        <a href="harina-pizza-napolitana" class="articulo-card">
           <div class="articulo-card__img-wrap">
             <img src="/.netlify/images?url=/img/pizza-napolitana.jpg&w=1400&fm=webp&q=80" alt="Harina pizza napolitana" loading="lazy" width="1536" height="2730">
           </div>
@@ -275,7 +306,7 @@
             <span class="articulo-card__leer">Leer →</span>
           </div>
         </a>
-        <a href="pizza-en-casa.html" class="articulo-card">
+        <a href="pizza-en-casa" class="articulo-card">
           <div class="articulo-card__img-wrap">
             <img src="/.netlify/images?url=/img/pizza-premium.jpg&w=1400&fm=webp&q=80" alt="Pizza en casa" loading="lazy" width="1536" height="2048">
           </div>
@@ -293,9 +324,9 @@
     <div class="container">
       <img src="/.netlify/images?url=/img/logo-crema-verde.jpg&w=150&fm=webp&q=90" alt="inizio" class="footer__logo" width="150" height="150">
       <nav class="footer__links">
-        <a href="../index.html">Inicio</a><span>·</span>
-        <a href="../articulos.html">Blog</a><span>·</span>
-        <a href="../politica-privacidad.html">Privacidad</a>
+        <a href="../">Inicio</a><span>·</span>
+        <a href="/articulos">Blog</a><span>·</span>
+        <a href="/politica-privacidad">Privacidad</a>
       </nav>
       <p class="footer__copy">© 2026 Inizio · Madrid · Rodny López</p>
     </div>
