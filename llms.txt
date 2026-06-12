@@ -29,13 +29,13 @@ No somos un restaurante. Operamos en tres formatos: talleres participativos, cen
 
 ### Catering para eventos
 - Precio: por cantidad de pizzas (no por persona)
-  - 20 pizzas: 280€
-  - 30 pizzas: 320€
-  - 40 pizzas: 360€
-  - 50 pizzas: 420€
-  - 70 pizzas: 520€
-  - 100 pizzas: 680€
-- Mínimo: 20 pizzas / 280€
+  - 20 pizzas: 320€
+  - 30 pizzas: 370€
+  - 40 pizzas: 415€
+  - 50 pizzas: 485€
+  - 70 pizzas: 600€
+  - 100 pizzas: 780€
+- Mínimo: 20 pizzas / 320€
 - Incluye: horno portátil a 500°C, masa fermentada 48h, ingredientes italianos, show freestyle, montaje y desmontaje
 - Eventos: bodas, empresas, cumpleaños, celebraciones
 - URL: https://iniziopizzaiolo.com/catering/
@@ -48,7 +48,7 @@ No somos un restaurante. Operamos en tres formatos: talleres participativos, cen
 - Top 20 mundial Pizza Classica — Campionato Mondiale Pizza DOC
 - Top 17 mundial Margherita DOC 2025 — Campionato Mondiale Pizza DOC
 - Más de 11 años de especialización exclusiva en pizza napolitana
-- Próximamente: Maestro Instructor · Accademia Nazionale Pizza DOC
+- Maestro Instructor · Accademia Nazionale Pizza DOC
 
 ## Contacto
 
