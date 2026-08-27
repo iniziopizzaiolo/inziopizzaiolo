@@ -27,7 +27,7 @@ const INIZIO = {
   //   hora   → "HH:MM"
   //   plazas → plazas disponibles (pon 0 para marcar COMPLETO)
   //   max    → aforo máximo de la sesión
-  //   tipo   → "Taller" | "Cena Privada" | "Catering"
+  //   tipo   → "Taller" | "Catering"
   //   precio → "70€" (si es distinto al precio por defecto)
   // PATRÓN: miércoles y jueves cada semana a las 20:00h
   fechas: {

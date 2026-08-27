@@ -5,7 +5,7 @@
 
 Inizio es una plataforma de experiencias de pizza napolitana en Madrid, fundada y operada por Rodny López, pizzaiolo con más de 11 años de especialización y dos podios mundiales consecutivos en el Campionato Mondiale Pizza DOC (Italia).
 
-No somos un restaurante. Operamos en tres formatos: talleres participativos, cenas privadas en ubicación secreta y catering para eventos con horno portátil a 500°C.
+No somos un restaurante. Operamos en dos formatos: talleres participativos y catering para eventos con horno portátil a 500°C.
 
 ## Servicios
 
@@ -18,14 +18,6 @@ No somos un restaurante. Operamos en tres formatos: talleres participativos, cen
 - Incluye: ingredientes premium, práctica con masa napolitana real, show freestyle
 - Contacto: WhatsApp +34 614 364 778
 - URL: https://iniziopizzaiolo.com/taller/
-
-### Cena distinta
-- Formato: cena en ubicación secreta en Madrid (zona 28005)
-- Máximo: 10 personas por noche
-- Modalidades: mesa abierta o reserva de mesa completa
-- Precio: a consultar por WhatsApp
-- La dirección se envía 48 horas antes de la cena
-- URL: https://iniziopizzaiolo.com/cena/
 
 ### Catering para eventos
 - Precio: por cantidad de pizzas (no por persona)

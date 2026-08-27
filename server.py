@@ -27,8 +27,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         pass  # silenciar logs de cada request
 
 if __name__ == '__main__':
+    import sys
+    try:
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+    except Exception:
+        pass
     ip = '192.168.1.139'
     with http.server.HTTPServer(('', 8080), Handler) as httpd:
-        print(f'\n  Escritorio → http://localhost:8080')
-        print(f'  Móvil      → http://{ip}:8080\n')
+        print('\n  Escritorio -> http://localhost:8080')
+        print(f'  Movil      -> http://{ip}:8080\n')
         httpd.serve_forever()

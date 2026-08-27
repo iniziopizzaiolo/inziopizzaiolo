@@ -114,3 +114,46 @@ addReveal('.faq__item', 'rv-up', true);
 
 // Pills — zoom
 addReveal('.lp-pill', 'rv-zoom', true);
+
+// "¿Qué es Inizio?" — label, título y sub entran con stagger
+addReveal('#quees .section__label, #quees .section__title, #quees .section__sub', 'rv-up', true);
+
+// Cabeceras de sección en landings (taller/catering/consultoría) — label + título entran con stagger,
+// igual que ya hacen las tarjetas debajo (antes se quedaban estáticas, sensación de vacío al entrar)
+addReveal('.lp-section .lp-label, .lp-section .lp-title', 'rv-up', true);
+
+// Contacto — texto + formulario
+addReveal('.contacto__intro, .contacto__form', 'rv-flip', false);
+
+// ---- FORMULARIO CONTACTO (Netlify Forms) ----
+const contactoForm = document.getElementById('contactoForm');
+if (contactoForm) {
+  contactoForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const successMsg = document.getElementById('contactoSuccess');
+    const errorMsg = document.getElementById('contactoError');
+    const submitBtn = contactoForm.querySelector('button[type="submit"]');
+    const originalLabel = submitBtn.textContent;
+
+    errorMsg.hidden = true;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    const data = new FormData(contactoForm);
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error('network');
+        contactoForm.hidden = true;
+        successMsg.hidden = false;
+      })
+      .catch(() => {
+        errorMsg.hidden = false;
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      });
+  });
+}
