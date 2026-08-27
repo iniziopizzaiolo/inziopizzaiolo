@@ -90,6 +90,51 @@ const INIZIO = {
     valoracion:   '5.0',
   },
 
+  // --- GALERÍA DE FOTOS Y VÍDEOS ---
+  // Para añadir: agrega un objeto { tipo, src, alt, cat }
+  // tipo: 'foto' | 'video' (los vídeos necesitan poster)
+  // Los primeros 6 aparecen en la home, todos en /galeria/
+  galeria: [
+    // --- PRIMERA PANTALLA HOME (5 items: 2 fotos + 3 vídeos) ---
+    { tipo: 'foto',  src: 'img/campeonato/rodny-campeonato-accion-montaje.jpg',   alt: 'Rodny López freestyle en el Campionato Mondiale Pizza DOC',              cat: 'Campeonato' },
+    { tipo: 'video', src: 'video/rodny-freestyle-campeonato.mp4',                 poster: 'img/campeonato/rodny-campeonato.jpg', alt: 'Freestyle pizza — Campionato Mondiale Pizza DOC', cat: 'Campeonato' },
+    { tipo: 'foto',  src: 'img/galeria/taller-rodny-setup-vela.jpg',              alt: 'Rodny preparando el espacio del taller con velas y copas',               cat: 'Taller'      },
+    { tipo: 'video', src: 'video/rodny-acrobacias-2.mp4',                        poster: 'img/campeonato/rodny-campeonato-accion-montaje.jpg', alt: 'Rodny — freestyle pizza en campeonato', cat: 'Freestyle' },
+    { tipo: 'foto',  src: 'img/galeria/taller-rodny-ensenando-masa.jpg',          alt: 'Rodny enseñando la técnica de masa napolitana a los participantes',       cat: 'Taller'      },
+
+    // --- FOTOS ---
+    { tipo: 'foto',  src: 'img/galeria/pizza-napolitana-2.jpg',                   alt: 'Pizza napolitana Inizio — borde alveolado y cornicione perfecto',         cat: 'Pizza'       },
+    { tipo: 'foto',  src: 'img/galeria/taller-grupo-1.jpg',                       alt: 'Grupo disfrutando el taller de pizza napolitana',                         cat: 'Taller'      },
+    { tipo: 'foto',  src: 'img/galeria/cena-privada-1.jpg',                       alt: 'Cena privada Inizio — ambiente exclusivo Madrid',                         cat: 'Cena'        },
+    { tipo: 'foto',  src: 'img/galeria/masa-fermentada.jpg',                      alt: 'Masa napolitana fermentada 48 horas',                                     cat: 'Técnica'     },
+    { tipo: 'foto',  src: 'img/galeria/rodny-campeonato-accion.jpg',              alt: 'Rodny en plena competición mundial',                                      cat: 'Campeonato'  },
+    { tipo: 'foto',  src: 'img/galeria/pizza-margherita-cena.jpg',                alt: 'Margherita Inizio — receta de campeonato',                                cat: 'Pizza'       },
+    { tipo: 'foto',  src: 'img/galeria/cena-ambiente.jpg',                        alt: 'Ambiente cena distinta Inizio Madrid',                                    cat: 'Cena'        },
+    { tipo: 'foto',  src: 'img/galeria/taller-grupo-2.jpg',                       alt: 'Taller Inizio — el grupo aprende junt@s',                                 cat: 'Taller'      },
+    { tipo: 'foto',  src: 'img/galeria/pizza-cebolla-mozzarella.jpg',             alt: 'Pizza con cebolla caramelizada y mozzarella fior di latte',               cat: 'Pizza'       },
+    { tipo: 'foto',  src: 'img/galeria/pizza-tomate-cherry.jpg',                  alt: 'Pizza con tomate cherry fresco y albahaca',                               cat: 'Pizza'       },
+    { tipo: 'foto',  src: 'img/galeria/taller-preparacion.jpg',                   alt: 'Preparación del taller Inizio — mise en place napolitana',                cat: 'Taller'      },
+    { tipo: 'foto',  src: 'img/galeria/rodny-campeonato-horno.jpg',               alt: 'Rodny frente al horno en el Campionato Mondiale',                         cat: 'Campeonato'  },
+    { tipo: 'foto',  src: 'img/galeria/rodny-revista-pizzadoc.jpg',               alt: 'Rodny López en Revista Pizza DOC',                                        cat: 'Prensa'      },
+    { tipo: 'foto',  src: 'img/galeria/rodny-preparando.jpg',                     alt: 'Rodny preparando pizza napolitana en el horno',                           cat: 'Técnica'     },
+    { tipo: 'foto',  src: 'img/galeria/taller-trabajo-masa.jpg',                  alt: 'Trabajo de masa — técnica napolitana paso a paso',                        cat: 'Taller'      },
+    { tipo: 'foto',  src: 'img/campeonato/rodny-campeonato-pizza-aceite-2025.jpg',alt: 'Rodny en el Campeonato Mundial Pizza DOC 2025 — aceite de oliva',         cat: 'Campeonato'  },
+    { tipo: 'foto',  src: 'img/galeria/taller-grupo-risas-copa.jpg',              alt: 'Grupo disfrutando del taller — risas y brindis al final',                 cat: 'Taller'      },
+    { tipo: 'foto',  src: 'img/galeria/cena-mesa-setup-elegante.jpg',             alt: 'Mesa elegante de la Cena Distinta Inizio Madrid',                        cat: 'Cena'        },
+    { tipo: 'foto',  src: 'img/galeria/rodny-retrato-cena-chaqueta.jpg',          alt: 'Rodny López — retrato elegante para la Cena Distinta',                   cat: 'Chef'        },
+    { tipo: 'foto',  src: 'img/galeria/taller-grupo-foto-final-2.jpg',            alt: 'Foto final del grupo del taller con Rodny',                              cat: 'Taller'      },
+    { tipo: 'foto',  src: 'img/galeria/taller-brindis-copa.jpg',                  alt: 'Brindis y celebración al final del taller Inizio',                       cat: 'Taller'      },
+
+    // --- VÍDEOS ---
+    { tipo: 'video', src: 'video/inizio-experiencia-taller.mp4',  poster: 'img/taller-ensenando.jpg',                        alt: 'Experiencia taller Inizio — masterclass en directo',    cat: 'Taller'    },
+    { tipo: 'video', src: 'video/rodny-acrobacias-3.mp4',         poster: 'img/campeonato/rodny-campeonato-accion-montaje.jpg', alt: 'Rodny — malabarismo con la masa',                     cat: 'Freestyle' },
+    { tipo: 'video', src: 'video/rodny-acrobacias-4.mp4',         poster: 'img/campeonato/rodny-campeonato-accion-montaje.jpg', alt: 'Rodny — acrobacias pizza en competición',             cat: 'Freestyle' },
+    { tipo: 'video', src: 'video/rodny-acrobacias-5.mp4',         poster: 'img/campeonato/rodny-campeonato-accion-montaje.jpg', alt: 'Rodny — freestyle y piruetas con pizza',              cat: 'Freestyle' },
+    { tipo: 'video', src: 'video/rodny-acrobacias-6.mp4',         poster: 'img/campeonato/rodny-campeonato-accion-montaje.jpg', alt: 'Rodny — acrobacias napolitanas',                      cat: 'Freestyle' },
+    { tipo: 'video', src: 'video/rodny-acrobacias-7.mp4',         poster: 'img/campeonato/rodny-campeonato-accion-montaje.jpg', alt: 'Rodny — show de pizza acrobática',                    cat: 'Freestyle' },
+    { tipo: 'video', src: 'video/rodny-tecnica-masa.mp4',         poster: 'img/campeonato/rodny-campeonato-accion-montaje.jpg', alt: 'Técnica de masa napolitana — Rodny López',            cat: 'Técnica'   },
+  ],
+
 };
 
 // =====================================================
@@ -243,6 +288,10 @@ document.addEventListener('DOMContentLoaded', () => {
     `).join('');
   }
 
+  // Galería home (preview 6 items) y galería completa
+  renderGaleria('galeria-preview', 5);
+  renderGaleria('galeria-completa', null);
+
   // Estadisticas
   const statsContainer = document.getElementById('stats-contador');
   if (statsContainer) {
@@ -250,6 +299,151 @@ document.addEventListener('DOMContentLoaded', () => {
     statsContainer.querySelector('[data-stat="experiencias"]') && (statsContainer.querySelector('[data-stat="experiencias"]').textContent  = INIZIO.stats.experiencias);
     statsContainer.querySelector('[data-stat="valoracion"]')   && (statsContainer.querySelector('[data-stat="valoracion"]').textContent   = INIZIO.stats.valoracion);
   }
+});
+
+// =====================================================
+//  GALERÍA — render + lightbox
+// =====================================================
+
+let _lbIndex  = 0;
+let _lbItems  = [];
+
+function _abs(path) {
+  // Convierte rutas relativas a absolutas para que funcionen desde cualquier subpágina
+  if (!path || path.startsWith('/') || path.startsWith('http')) return path;
+  return '/' + path;
+}
+
+function renderGaleria(containerId, maxItems) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  const isPage    = containerId === 'galeria-completa';
+  const items     = maxItems ? INIZIO.galeria.slice(0, maxItems) : INIZIO.galeria;
+  _lbItems        = INIZIO.galeria; // siempre todos para el lightbox
+
+  // Layout especial para la galería completa: algunos ítems son "wide" o "tall"
+  const specialCells = [2, 5, 10, 15]; // índices que serán wide (16:9)
+
+  container.innerHTML = items.map((item, i) => {
+    const eager  = i < 2;
+    const isVideo = item.tipo === 'video';
+    const src     = _abs(item.src);
+    const poster  = _abs(item.poster || '');
+    const media   = isVideo
+      ? `<video autoplay muted loop playsinline preload="metadata"
+           poster="${poster}"
+           aria-label="${item.alt}">
+           <source src="${src}" type="video/mp4">
+         </video>`
+      : `<img src="${src}" alt="${item.alt}"
+             loading="${eager ? 'eager' : 'lazy'}"
+             decoding="async">`;
+
+    if (isPage) {
+      const isWide = specialCells.includes(i);
+      return `
+        <div class="galeria-page__cell${isWide ? ' galeria-page__cell--wide' : ''}"
+             data-lb="${i}" role="button" tabindex="0"
+             aria-label="Ampliar: ${item.alt}">
+          ${media}
+          <div class="galeria-page__cell__overlay">
+            <div class="galeria-page__cell__zoom">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5">
+                <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                <path d="M11 8v6M8 11h6"/>
+              </svg>
+            </div>
+          </div>
+          <div class="galeria-page__cell__caption">${item.alt}</div>
+        </div>`;
+    } else {
+      return `
+        <div class="galeria-home__item" data-lb="${i}" role="button" tabindex="0"
+             aria-label="${item.cat}: ${item.alt}">
+          ${media}
+          <div class="galeria-home__overlay"></div>
+          <span class="galeria-home__tag">${item.cat}</span>
+          ${isVideo ? '<span class="galeria-home__play">▶</span>' : ''}
+        </div>`;
+    }
+  }).join('');
+
+  // Autoplay vídeos al entrar en viewport
+  const videos = container.querySelectorAll('video');
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.play().catch(() => {});
+        else e.target.pause();
+      });
+    }, { threshold: 0.25 });
+    videos.forEach(v => obs.observe(v));
+  }
+
+  // Abrir lightbox al click
+  container.addEventListener('click', e => {
+    const cell = e.target.closest('[data-lb]');
+    if (!cell) return;
+    abrirLightbox(parseInt(cell.dataset.lb));
+  });
+  container.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      const cell = e.target.closest('[data-lb]');
+      if (!cell) return;
+      e.preventDefault();
+      abrirLightbox(parseInt(cell.dataset.lb));
+    }
+  });
+}
+
+function abrirLightbox(idx) {
+  _lbIndex = idx;
+  _renderLbItem();
+  const lb = document.getElementById('lightbox');
+  if (!lb) return;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  lb.focus();
+}
+
+function cerrarLightbox() {
+  const lb = document.getElementById('lightbox');
+  if (!lb) return;
+  lb.classList.remove('active');
+  document.body.style.overflow = '';
+  lb.querySelectorAll('video').forEach(v => v.pause());
+}
+
+function navLightbox(dir) {
+  _lbIndex = (_lbIndex + dir + _lbItems.length) % _lbItems.length;
+  _renderLbItem();
+}
+
+function _renderLbItem() {
+  const item    = _lbItems[_lbIndex];
+  const wrap    = document.getElementById('lb-media');
+  const counter = document.getElementById('lb-counter');
+  if (!wrap) return;
+  if (item.tipo === 'video') {
+    wrap.innerHTML = `<video class="lightbox__media-wrap" controls autoplay playsinline
+      style="max-width:90vw;max-height:86vh;border-radius:4px;display:block;"
+      src="${_abs(item.src)}" poster="${_abs(item.poster || '')}"></video>`;
+  } else {
+    wrap.innerHTML = `<img
+      style="max-width:90vw;max-height:86vh;object-fit:contain;display:block;border-radius:4px;"
+      src="${_abs(item.src)}" alt="${item.alt}">`;
+  }
+  if (counter) counter.textContent = `${_lbIndex + 1} / ${_lbItems.length}`;
+}
+
+// Teclado en lightbox
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb || !lb.classList.contains('active')) return;
+  if (e.key === 'Escape')     cerrarLightbox();
+  if (e.key === 'ArrowRight') navLightbox(1);
+  if (e.key === 'ArrowLeft')  navLightbox(-1);
 });
 
 function getSvgIcon(icono) {

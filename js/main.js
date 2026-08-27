@@ -45,25 +45,72 @@ document.querySelectorAll('.faq__question').forEach(btn => {
   });
 });
 
-// ---- Smooth reveal on scroll ----
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+// ---- Animaciones de scroll — toda la web ----
+const revealStyle = document.createElement('style');
+revealStyle.textContent = `
+  /* Base */
+  .rv       { opacity: 0; transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1); will-change: transform, opacity; }
+  .rv.show  { opacity: 1 !important; transform: none !important; }
+
+  /* Desde abajo (default) */
+  .rv-up    { transform: translateY(56px) scale(.96); }
+  /* Desde la izquierda */
+  .rv-left  { transform: translateX(-60px); }
+  /* Desde la derecha */
+  .rv-right { transform: translateX(60px); }
+  /* Zoom in */
+  .rv-zoom  { transform: scale(.88); }
+  /* Flip leve */
+  .rv-flip  { transform: translateY(40px) rotateX(8deg); transform-origin: bottom center; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rv, .rv-up, .rv-left, .rv-right, .rv-zoom, .rv-flip { opacity: 1; transform: none; transition: none; }
+  }
+`;
+document.head.appendChild(revealStyle);
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('show');
+      revealObserver.unobserve(e.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-document.querySelectorAll('.pilar, .experiencia__inner, .privada__inner, .rodny__inner, .faq__item').forEach(el => {
-  el.classList.add('reveal');
-  observer.observe(el);
+function addReveal(sel, variant, stagger) {
+  document.querySelectorAll(sel).forEach((el, i) => {
+    el.classList.add('rv', variant);
+    if (stagger) el.style.transitionDelay = Math.min(i % 8 * 90, 600) + 'ms';
+    revealObserver.observe(el);
+  });
+}
+
+// Tarjetas y items en grid — suben con stagger
+addReveal('.pilar', 'rv-up', true);
+addReveal('.lp-card', 'rv-up', true);
+addReveal('.lp-paso', 'rv-up', true);
+addReveal('.lp-testi', 'rv-up', true);
+addReveal('.lp-incluye-item', 'rv-up', true);
+addReveal('.galeria-home__item', 'rv-zoom', true);
+addReveal('.galeria-page__cell', 'rv-zoom', true);
+addReveal('.logro', 'rv-up', true);
+addReveal('.timeline__item', 'rv-up', true);
+addReveal('.aparicion', 'rv-up', true);
+addReveal('.fecha-card', 'rv-up', true);
+
+// Stats y credenciales — desde la izquierda/derecha alternando
+document.querySelectorAll('.lp-stat, .lp-cred').forEach((el, i) => {
+  el.classList.add('rv', i % 2 === 0 ? 'rv-left' : 'rv-right');
+  el.style.transitionDelay = Math.min(i * 100, 500) + 'ms';
+  revealObserver.observe(el);
 });
 
-// Add reveal CSS dynamically
-const style = document.createElement('style');
-style.textContent = `
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-`;
-document.head.appendChild(style);
+// Secciones grandes — flip
+addReveal('.experiencia__inner, .privada__inner, .rodny__inner', 'rv-flip', false);
+
+// FAQ
+addReveal('.faq__item', 'rv-up', true);
+
+// Pills — zoom
+addReveal('.lp-pill', 'rv-zoom', true);

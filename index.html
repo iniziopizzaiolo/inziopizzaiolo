@@ -5,8 +5,8 @@
   <meta name="facebook-domain-verification" content="10eqdajgl2pnfc3l6sqft59teflvjj" />
   <meta name="theme-color" content="#1a1a1a">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Experiencias únicas con pizza napolitana en Madrid. Talleres, cenas privadas y catering con Rodny López, top 20 mundial.">
-  <title>Inizio · Pizza napolitana en Madrid · Talleres, cenas y catering</title>
+  <meta name="description" content="Experiencias únicas con pizza napolitana en Madrid. Talleres y catering con Rodny López, top 20 mundial.">
+  <title>Inizio · Pizza napolitana en Madrid · Talleres y catering</title>
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://iniziopizzaiolo.com/">
@@ -30,7 +30,7 @@
     "@id": "https://iniziopizzaiolo.com/#organization",
     "name": "Inizio",
     "alternateName": "Inizio Pizzaiolo",
-    "description": "Experiencias exclusivas de pizza napolitana en Madrid: talleres, cenas privadas y catering con horno a 500°C. Pizzaiolo top 20 mundial con 11 años de experiencia.",
+    "description": "Experiencias exclusivas de pizza napolitana en Madrid: talleres y catering con horno a 500°C. Pizzaiolo top 20 mundial con 11 años de experiencia.",
     "url": "https://iniziopizzaiolo.com",
     "image": "https://iniziopizzaiolo.com/img/hero-campeonato.jpg",
     "telephone": "+34614364778",
@@ -47,8 +47,46 @@
       "ratingValue": "5.0",
       "bestRating": "5",
       "worstRating": "1",
-      "reviewCount": "3"
+      "reviewCount": "6"
     },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Maria Moreno" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Fue una experiencia increíble! Tú haces la pizza siguiendo los pasos que Rodny va indicando. Lindo ambiente para disfrutar de una noche distinta entre amigos."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Rafael Barroeta" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Experiencia única en todos los sentidos. La calidad de las pizzas es excepcional, y el trabajo del pizzaiolo se nota en cada detalle: masa perfecta, ingredientes de primera y una elaboración impecable."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Maria Laura Garcias Abreu" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Me encantó el concepto. No solo comes una pizza buenísima, sino que disfrutas preparándola a tu gusto y viviendo toda la experiencia. Ingredientes de calidad, ambiente genial y un trato excelente y cercano."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Dayana Sánchez-Castellano" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Me encantó la experiencia. Fui con unas amigas y lo pasamos increíble. Los chicos son súper amables y profesionales, y las pizzas riquísimas; repetiré seguro."
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Andrea Balseca" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Realmente una experiencia súper enriquecedora. El ambiente, la compañía y lo acogedor que hacen todo es magnífico. Súper recomendable!"
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Andrés Tul" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Mágico lugar donde la pasión y profesionalidad por la pizza se fusionan y logran un concepto innovador en Madrid donde aprender de profesionales de la pizza te da la confianza de que haces una \"Vera Pizza\"."
+      }
+    ],
     "founder": {
       "@type": "Person",
       "@id": "https://iniziopizzaiolo.com/#rodny-lopez",
@@ -75,19 +113,19 @@
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Cena Distinta",
-            "url": "https://iniziopizzaiolo.com/cena/"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
             "name": "Catering de Pizza Napolitana",
             "url": "https://iniziopizzaiolo.com/catering/"
           },
           "price": "320",
           "priceCurrency": "EUR"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Consultoría para pizzerías",
+            "url": "https://iniziopizzaiolo.com/consultoria/"
+          }
         }
       ]
     },
@@ -169,6 +207,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Fredoka:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/extra.css">
+  <link rel="stylesheet" href="css/cult-effects.css">
   <link rel="canonical" href="https://iniziopizzaiolo.com/">
   <link rel="preload" as="image" href="/.netlify/images?url=/img/hero-campeonato.jpg&w=1600&fm=webp&q=85" fetchpriority="high">
   <!-- Google Tag Manager -->
@@ -214,21 +253,18 @@
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="#hero" class="nav__logo">
-        <svg class="logo-svg" viewBox="0 0 150 44" xmlns="http://www.w3.org/2000/svg" aria-label="Inizio" role="img">
-          <rect width="150" height="44" rx="22" fill="#294C29"/>
-          <circle cx="22" cy="22" r="7.5" fill="none" stroke="#E7AF67" stroke-width="1.8"/>
-          <circle cx="22" cy="22" r="2.8" fill="#E7AF67"/>
-          <text x="90" y="29" text-anchor="middle" font-family="'Fredoka','Arial Rounded MT Bold',sans-serif" font-weight="700" font-size="22" fill="#FEEEC1" letter-spacing="2">inizio</text>
-        </svg>
+        <img src="/img/brand/logo-transparente.png" alt="Inizio" class="logo-svg">
       </a>
       <button class="nav__toggle" id="navToggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links" id="navLinks">
-        <li><a href="taller/">Taller</a></li>
-        <li><a href="cena/">Cena distinta</a></li>
-        <li><a href="catering/">Catering</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="taller/" class="navlink--glow">Taller</a></li>
+        <li><a href="catering/" class="navlink--glow">Catering</a></li>
+        <li><a href="sobre-rodny/" class="navlink--glow">Sobre Rodny</a></li>
+        <li><a href="galeria/" class="navlink--glow">Galería</a></li>
+        <li><a href="consultoria/" class="navlink--glow">Consultoría</a></li>
+        <li><a href="#contacto" class="navlink--glow">Contacto</a></li>
         <li>
           <a href="https://wa.me/34614364778?text=Hola!%20Quiero%20información%20sobre%20Inizio"
              class="btn btn--nav" target="_blank" rel="noopener">
@@ -242,21 +278,28 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero__bg">
-      <img src="/.netlify/images?url=/img/hero-campeonato.jpg&w=1600&fm=webp&q=85" alt="Rodny López en Campionato Mondiale Pizza DOC" class="hero__bg-img" width="1365" height="2048" fetchpriority="high">
+      <!-- Vídeo de fondo (desktop). En móvil o prefers-reduced-motion se oculta con CSS y aparece la imagen. -->
+      <video class="hero__bg-video" autoplay muted loop playsinline
+             poster="/img/hero-campeonato.jpg"
+             preload="none"
+             aria-hidden="true">
+        <source src="/video/rodny-freestyle-campeonato.mp4" type="video/mp4">
+      </video>
+      <img src="/.netlify/images?url=/img/hero-campeonato.jpg&w=1600&fm=webp&q=85"
+           alt="Rodny López en Campionato Mondiale Pizza DOC"
+           class="hero__bg-img"
+           width="1365" height="2048"
+           fetchpriority="high">
       <div class="hero__bg-overlay"></div>
     </div>
     <div class="hero__content">
-      <svg class="hero__logo" viewBox="0 0 170 52" xmlns="http://www.w3.org/2000/svg" aria-label="Inizio" role="img">
-        <circle cx="18" cy="26" r="10" fill="none" stroke="#E7AF67" stroke-width="2"/>
-        <circle cx="18" cy="26" r="3.5" fill="#E7AF67"/>
-        <text x="102" y="35" text-anchor="middle" font-family="'Fredoka','Arial Rounded MT Bold',sans-serif" font-weight="700" font-size="32" fill="#FEEEC1" letter-spacing="3">inizio</text>
-      </svg>
+      <img src="/img/brand/logo-dorado.png" alt="Inizio" class="hero__logo">
       <h1 class="hero__headline">
         Pizza napolitana de campeonato.<br>En Madrid.
       </h1>
-      <p class="hero__sub">Talleres, cenas privadas y catering con un pizzaiolo top 20 mundial.</p>
+      <p class="hero__sub">Talleres y catering con un pizzaiolo top 20 mundial.</p>
       <a href="https://wa.me/34614364778"
-         class="btn btn--primary btn--lg"
+         class="btn btn--primary btn--lg btn--glow"
          target="_blank" rel="noopener">
         <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Escríbenos por WhatsApp
@@ -273,18 +316,64 @@
     <div class="container">
       <p class="section__label">¿Qué es Inizio?</p>
       <h2 class="section__title">No es un restaurante. Es una experiencia.</h2>
-      <p class="section__sub">Inizio no es un restaurante. Es una experiencia construida alrededor de la pizza napolitana y de quien la hace. Talleres donde eres el pizzaiolo, cenas que no se olvidan y catering con show en vivo.</p>
+      <p class="section__sub">Inizio no es un restaurante. Es una experiencia construida alrededor de la pizza napolitana y de quien la hace. Talleres donde eres el pizzaiolo y catering con show en vivo.</p>
     </div>
   </section>
 
 
+
+  <!-- CÓMO FUNCIONA EL CATERING -->
+  <section class="quien-rodny" id="como-funciona-catering">
+    <div class="container">
+      <div class="quien-rodny__grid">
+        <div class="quien-rodny__img-wrap">
+          <img class="quien-rodny__img"
+               src="/.netlify/images?url=/img/freestyle.jpg&w=720&fm=webp&q=85"
+               alt="Show freestyle de pizza napolitana en un catering de Inizio"
+               loading="lazy" width="560" height="680">
+          <div class="quien-rodny__badge">
+            <strong>320€</strong>
+            Desde<br>20 pizzas
+          </div>
+        </div>
+        <div class="quien-rodny__texto-wrap">
+          <span class="quien-rodny__eyebrow">Catering Inizio</span>
+          <h2 class="quien-rodny__titulo">Pizza <em>en directo</em>, delante de tus invitados.</h2>
+          <p class="quien-rodny__texto">
+            Llegamos con horno profesional, masa fermentada 48h y el show freestyle integrado en la propia elaboración. Durante todo el evento las pizzas salen del horno en continuo, en formato degustación, mientras tus invitados ven cómo se hacen.
+          </p>
+          <div class="quien-rodny__creds">
+            <div class="cred-item"><strong>500°C</strong><span>Horno profesional montado en tu evento</span></div>
+            <div class="cred-item"><strong>48h</strong><span>Fermentación de la masa, harinas italianas tipo 00</span></div>
+            <div class="cred-item"><strong>2h</strong><span>Show freestyle + pizzas saliendo del horno en continuo</span></div>
+            <div class="cred-item"><strong>Cerrado</strong><span>Presupuesto por pizza, sin sorpresas el día del evento</span></div>
+          </div>
+          <a href="catering/" class="btn btn--dorado">
+            Ver cómo funciona el catering →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA — Lo que vivirás -->
+  <section class="galeria-home" id="galeria">
+    <div class="container">
+      <p class="section__label">Lo que vivirás</p>
+      <h2 class="section__title">Pizza, técnica y momentos reales</h2>
+      <p class="galeria-home__sub">Fotos y vídeos de talleres, campeonatos y catering. Esto es lo que te llevas.</p>
+      <div class="galeria-home__cta">
+        <a href="galeria/" class="btn btn--primary btn--texture">Ver galería completa →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- 3 FORMATOS DE EXPERIENCIA -->
   <section class="formatos" id="formatos">
     <div class="container">
       <p class="section__label">Nuestras experiencias</p>
       <h2 class="section__title">Elige cómo quieres vivir la pizza</h2>
-      <p class="section__sub">Tres formatos distintos para cada ocasión. Todos con ingredientes premium y la técnica de un pizzaiolo de campeonato.</p>
+      <p class="section__sub">Dos formatos distintos para cada ocasión. Todos con ingredientes premium y la técnica de un pizzaiolo de campeonato.</p>
       <div class="formatos__grid">
 
         <div class="formato-card">
@@ -301,23 +390,6 @@
               <li>60€ precio de lanzamiento</li>
             </ul>
             <a href="taller/" class="btn btn--primary btn--sm">Ver taller</a>
-          </div>
-        </div>
-
-        <div class="formato-card">
-          <div class="formato-card__img">
-            <img src="/.netlify/images?url=/img/ambiente-cena.jpg&w=1400&fm=webp&q=80" alt="Cena distinta Inizio" loading="lazy" width="1536" height="2730">
-            <span class="formato-card__tag">Cena distinta</span>
-          </div>
-          <div class="formato-card__content">
-            <h3 class="formato-card__title">Una noche que no se repite</h3>
-            <p class="formato-card__desc">Pizza napolitana de campeonato en una ubicación secreta de Madrid. Dirección que recibes 48 horas antes. Máx. 10 personas.</p>
-            <ul class="formato-card__features">
-              <li>Máx. 10 personas</li>
-              <li>Ubicación secreta</li>
-              <li>Precio a consultar</li>
-            </ul>
-            <a href="cena/" class="btn btn--primary btn--sm">Ver cena distinta</a>
           </div>
         </div>
 
@@ -344,6 +416,18 @@
 
 
 
+
+  <!-- CONSULTORÍA — teaser para dueños de pizzería/restaurante -->
+  <section class="consultoria-banner">
+    <div class="container consultoria-banner__inner">
+      <div>
+        <p class="consultoria-banner__label">Para negocios de pizza</p>
+        <h2 class="consultoria-banner__title">¿Tienes tu propia pizzería?</h2>
+        <p class="consultoria-banner__sub">Asesoría, montaje de negocio desde cero y formación técnica 1:1 — con el método de un pizzaiolo con podios mundiales.</p>
+      </div>
+      <a href="consultoria/" class="btn btn--dorado">Ver consultoría →</a>
+    </div>
+  </section>
 
   <!-- RESEÑAS -->
   <section class="resenas" id="resenas">
@@ -526,15 +610,11 @@
   <!-- CTA FINAL -->
   <section class="cta-final" id="contacto">
     <div class="container">
-      <svg class="cta-final__logo" viewBox="0 0 170 52" xmlns="http://www.w3.org/2000/svg" aria-label="Inizio" role="img">
-        <circle cx="18" cy="26" r="10" fill="none" stroke="#E7AF67" stroke-width="2"/>
-        <circle cx="18" cy="26" r="3.5" fill="#E7AF67"/>
-        <text x="102" y="35" text-anchor="middle" font-family="'Fredoka','Arial Rounded MT Bold',sans-serif" font-weight="700" font-size="32" fill="#FEEEC1" letter-spacing="3">inizio</text>
-      </svg>
+      <img src="/img/brand/logo-dorado.png" alt="Inizio" class="cta-final__logo">
       <h2 class="cta-final__title">¿Cuál es tu experiencia Inizio?</h2>
-      <p class="cta-final__sub">Taller, cena distinta o catering. Cuéntanos qué buscas.</p>
+      <p class="cta-final__sub">Taller o catering. Cuéntanos qué buscas.</p>
       <a href="https://wa.me/34614364778"
-         class="btn btn--primary btn--lg" target="_blank" rel="noopener">
+         class="btn btn--primary btn--lg btn--glow" target="_blank" rel="noopener">
         <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         Escribir por WhatsApp
       </a>
@@ -545,12 +625,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <svg class="footer__logo" viewBox="0 0 150 44" xmlns="http://www.w3.org/2000/svg" aria-label="Inizio" role="img">
-        <rect width="150" height="44" rx="22" fill="#294C29"/>
-        <circle cx="22" cy="22" r="7.5" fill="none" stroke="#E7AF67" stroke-width="1.8"/>
-        <circle cx="22" cy="22" r="2.8" fill="#E7AF67"/>
-        <text x="90" y="29" text-anchor="middle" font-family="'Fredoka','Arial Rounded MT Bold',sans-serif" font-weight="700" font-size="22" fill="#FEEEC1" letter-spacing="2">inizio</text>
-      </svg>
+      <img src="/img/brand/logo-transparente.png" alt="Inizio" class="footer__logo">
       <p class="footer__tagline">Pizza, negocio y libertad.</p>
       <div class="footer__social">
         <a href="https://instagram.com/iniziorp" target="_blank" rel="noopener">@iniziorp</a>
@@ -576,7 +651,23 @@
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
-  <script src="js/config.js?v=2"></script>
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galería">
+    <button class="lightbox__close" onclick="cerrarLightbox()" aria-label="Cerrar galería">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <button class="lightbox__prev" onclick="navLightbox(-1)" aria-label="Anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+    </button>
+    <div id="lb-media"></div>
+    <button class="lightbox__next" onclick="navLightbox(1)" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+    </button>
+    <div class="lightbox__counter" id="lb-counter"></div>
+  </div>
+
+  <script src="js/config.js?v=3"></script>
   <script src="js/main.js"></script>
+  <script src="js/cult-effects.js"></script>
 </body>
 </html>

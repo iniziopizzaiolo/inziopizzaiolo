@@ -307,6 +307,491 @@
   .fechas__grid { grid-template-columns: 1fr; }
 }
 
+/* =====================================================
+   NUEVAS SECCIONES — Rediseño visual "vender experiencia"
+===================================================== */
+
+/* ---- HERO CON VÍDEO ---- */
+.hero__bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  z-index: 0;
+}
+/* Desktop: video encima, imagen oculta */
+@media (min-width: 769px) {
+  .hero__bg-img { display: none; }
+}
+/* Móvil: solo imagen (ahorra datos) */
+@media (max-width: 768px) {
+  .hero__bg-video { display: none; }
+  .hero__bg-img { display: block; }
+}
+/* Sin movimiento por accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .hero__bg-video { display: none !important; }
+  .hero__bg-img { display: block !important; }
+}
+
+/* ---- QUIÉN ES RODNY (home) ---- */
+.quien-rodny {
+  padding: 100px 0;
+  background: var(--verde);
+  overflow: hidden;
+}
+.quien-rodny__grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 72px;
+  align-items: center;
+}
+.quien-rodny__img-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+.quien-rodny__img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgba(0,0,0,.4);
+}
+.quien-rodny__badge {
+  position: absolute;
+  bottom: 24px;
+  right: -24px;
+  background: var(--dorado);
+  color: var(--verde);
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  font-size: .68rem;
+  line-height: 1.3;
+  box-shadow: 0 8px 28px rgba(0,0,0,.3);
+  padding: 10px;
+  font-family: 'Inter', sans-serif;
+}
+.quien-rodny__badge strong {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: 2px;
+}
+.quien-rodny__eyebrow {
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--dorado);
+  margin-bottom: 16px;
+  display: block;
+}
+.quien-rodny__titulo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  color: var(--crema);
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+.quien-rodny__titulo em {
+  font-style: italic;
+  color: var(--dorado);
+}
+.quien-rodny__texto {
+  color: rgba(254,238,193,.78);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+.quien-rodny__creds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+.cred-item {
+  background: rgba(254,238,193,.07);
+  border: 1px solid rgba(231,175,103,.22);
+  border-radius: 12px;
+  padding: 16px 18px;
+  transition: background var(--transition);
+}
+.cred-item:hover { background: rgba(254,238,193,.12); }
+.cred-item strong {
+  display: block;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2rem;
+  color: var(--dorado);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.cred-item span {
+  font-size: .75rem;
+  color: rgba(254,238,193,.6);
+  line-height: 1.4;
+  display: block;
+}
+.btn--dorado {
+  background: var(--dorado);
+  color: var(--verde);
+  font-weight: 700;
+}
+.btn--dorado:hover { background: #d4a050; }
+
+/* ---- CONSULTORÍA BANNER (home) ---- */
+.consultoria-banner {
+  background: var(--verde);
+  padding: 56px 0;
+}
+.consultoria-banner__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.consultoria-banner__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--dorado);
+  margin-bottom: 8px;
+}
+.consultoria-banner__title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 600;
+  color: var(--crema);
+  margin-bottom: 8px;
+}
+.consultoria-banner__sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: rgba(254,238,193,.75);
+  max-width: 480px;
+  line-height: 1.6;
+}
+.consultoria-banner .btn--dorado { white-space: nowrap; }
+@media (max-width: 700px) {
+  .consultoria-banner__inner { flex-direction: column; align-items: flex-start; }
+}
+
+/* ---- GALERÍA HOME (preview bento) ---- */
+.galeria-home {
+  padding: 90px 0 0;
+  background: #faf7f2;
+}
+.galeria-home .section__label,
+.galeria-home .section__title { text-align: center; }
+.galeria-home__sub {
+  text-align: center;
+  color: var(--gris);
+  font-style: italic;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.galeria-home__bento {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-rows: 270px 220px;
+  gap: 5px;
+  overflow: hidden;
+}
+.galeria-home__item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: #111;
+}
+/* Item 1: grande (col 1, ocupa 2 filas) */
+.galeria-home__item:nth-child(1) {
+  grid-row: 1 / 3;
+}
+/* Item 5: ancho (ocupa col 2+3 en fila 2) */
+.galeria-home__item:nth-child(5) {
+  grid-column: 2 / 4;
+}
+.galeria-home__item img,
+.galeria-home__item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .55s ease;
+}
+.galeria-home__item:hover img,
+.galeria-home__item:hover video {
+  transform: scale(1.07);
+}
+.galeria-home__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(41,76,41,.55) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+.galeria-home__item:hover .galeria-home__overlay { opacity: 1; }
+.galeria-home__tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(231,175,103,.92);
+  color: var(--verde);
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 20px;
+  pointer-events: none;
+}
+.galeria-home__play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: rgba(255,255,255,.85);
+  text-shadow: 0 2px 12px rgba(0,0,0,.5);
+  pointer-events: none;
+  opacity: .7;
+  transition: opacity .2s;
+}
+.galeria-home__item:hover .galeria-home__play { opacity: 1; }
+.galeria-home__cta {
+  padding: 44px 0 90px;
+  text-align: center;
+}
+
+/* ---- GALERÍA COMPLETA (/galeria/) ---- */
+.galeria-page {
+  padding: 0 0 96px;
+  background: var(--crema);
+}
+.galeria-page__header {
+  padding: 120px 0 64px;
+  background: var(--verde);
+  text-align: center;
+}
+.galeria-page__header .section__label { color: var(--dorado); }
+.galeria-page__title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  color: var(--crema);
+  margin-bottom: 14px;
+}
+.galeria-page__sub {
+  color: rgba(254,238,193,.7);
+  font-size: 1.05rem;
+  font-style: italic;
+}
+.galeria-page__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 0;
+}
+.galeria-page__cell {
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  position: relative;
+  background: #111;
+}
+.galeria-page__cell--tall { aspect-ratio: 3/4; }
+.galeria-page__cell--wide {
+  grid-column: span 2;
+  aspect-ratio: 16/9;
+}
+.galeria-page__cell img,
+.galeria-page__cell video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .45s ease;
+}
+.galeria-page__cell:hover img,
+.galeria-page__cell:hover video { transform: scale(1.05); }
+.galeria-page__cell__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(41,76,41,.35);
+  opacity: 0;
+  transition: opacity .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.galeria-page__cell:hover .galeria-page__cell__overlay { opacity: 1; }
+.galeria-page__cell__zoom {
+  width: 52px;
+  height: 52px;
+  background: rgba(254,238,193,.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.galeria-page__cell__zoom svg { width: 22px; height: 22px; stroke: var(--verde); }
+.galeria-page__cell__caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 14px 12px;
+  background: linear-gradient(transparent, rgba(0,0,0,.65));
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+.galeria-page__cell:hover .galeria-page__cell__caption { opacity: 1; }
+
+/* ---- LIGHTBOX ---- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(8,8,8,.97);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .22s;
+}
+.lightbox.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.lightbox__media-wrap {
+  max-width: 90vw;
+  max-height: 86vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox__media-wrap img,
+.lightbox__media-wrap video {
+  max-width: 90vw;
+  max-height: 86vh;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+}
+.lightbox__close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  color: rgba(255,255,255,.8);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s, color .2s;
+}
+.lightbox__close:hover { background: rgba(255,255,255,.18); color: #fff; }
+.lightbox__close svg { width: 20px; height: 20px; }
+.lightbox__prev,
+.lightbox__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(254,238,193,.1);
+  border: 1px solid rgba(254,238,193,.18);
+  color: rgba(255,255,255,.8);
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.lightbox__prev { left: 16px; }
+.lightbox__next { right: 16px; }
+.lightbox__prev:hover,
+.lightbox__next:hover { background: rgba(254,238,193,.22); color: #fff; }
+.lightbox__prev svg,
+.lightbox__next svg { width: 22px; height: 22px; }
+.lightbox__counter {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,.45);
+  font-size: .82rem;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: .06em;
+}
+
+/* ---- RESPONSIVE GALERÍA NUEVA ---- */
+@media (max-width: 1100px) {
+  .quien-rodny__grid { grid-template-columns: 300px 1fr; gap: 48px; }
+  .galeria-home__bento {
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 250px 220px;
+  }
+  .galeria-home__item:nth-child(4) { display: none; }
+  .galeria-home__item:nth-child(5) { grid-column: 2 / 4; }
+}
+@media (max-width: 900px) {
+  .quien-rodny__grid { grid-template-columns: 1fr; gap: 40px; }
+  .quien-rodny__badge { right: 16px; bottom: 16px; }
+  .quien-rodny__img { aspect-ratio: 4/3; }
+  .galeria-home__bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 220px 220px 220px;
+  }
+  .galeria-home__item:nth-child(1) { grid-column: 1 / 3; grid-row: 1; }
+  .galeria-home__item:nth-child(4) { display: block; }
+  .galeria-home__item:nth-child(5) { grid-column: 1 / 3; grid-row: 3; }
+  .galeria-page__grid { grid-template-columns: repeat(2,1fr); }
+  .galeria-page__cell--wide { grid-column: span 2; }
+}
+@media (max-width: 600px) {
+  .galeria-home__bento {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .galeria-home__item { height: 240px; }
+  .galeria-home__item:nth-child(1),
+  .galeria-home__item:nth-child(5) { grid-column: 1; grid-row: auto; }
+  .quien-rodny__creds { grid-template-columns: 1fr 1fr; }
+  .galeria-page__grid { grid-template-columns: 1fr; }
+  .galeria-page__cell--wide { grid-column: span 1; }
+  .lightbox__prev { left: 6px; }
+  .lightbox__next { right: 6px; }
+}
+
 /* ── Scroll offset para menú fijo ── */
 section[id], div[id] {
   scroll-margin-top: 80px;

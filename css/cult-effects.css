@@ -1,0 +1,221 @@
+/* ===========================
+   CULT-EFFECTS — inspirado en cult-ui (nolly-studio/cult-ui)
+   Reimplementación vanilla CSS/JS (sin React/Next.js), sobre la
+   paleta de Inizio: crema #FEEEC1 · rojo #7F1100 · verde #294C29 · dorado #E7AF67
+   Componentes: .btn--texture, .btn--glow, .logo-carousel
+=========================== */
+
+/* ---- BTN--TEXTURE ----
+   Variante "metálica" de .btn: gradiente vertical + relieve sutil.
+   Se combina con .btn (base) y con .btn--primary / .btn--dorado para el color. */
+.btn--texture {
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, .18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .28),
+    inset 0 -6px 10px rgba(0, 0, 0, .12),
+    0 1px 2px rgba(0, 0, 0, .25);
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.btn--texture.btn--primary {
+  background: linear-gradient(to bottom, #3d663d 0%, var(--verde) 55%, #1f3a1f 100%);
+}
+.btn--texture.btn--primary:hover {
+  background: linear-gradient(to bottom, #4a734a 0%, #335733 55%, #294c29 100%);
+}
+.btn--texture.btn--primary:active {
+  background: linear-gradient(to bottom, #1f3a1f 0%, var(--verde) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, .35);
+}
+
+.btn--texture.btn--dorado {
+  background: linear-gradient(to bottom, #f2c988 0%, var(--dorado) 55%, #c98f45 100%);
+  color: var(--negro);
+}
+.btn--texture.btn--dorado:hover {
+  background: linear-gradient(to bottom, #f7dba8 0%, #eab975 55%, #d4a050 100%);
+}
+.btn--texture.btn--dorado:active {
+  background: linear-gradient(to bottom, #c98f45 0%, var(--dorado) 100%);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, .3);
+}
+
+/* ---- BTN--GLOW ----
+   El halo sigue al cursor en el eje X (ver js/cult-effects.js).
+   Requiere position:relative + overflow:hidden (ya incluidos aquí). */
+.btn--glow {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  --glow-x: 50%;
+}
+
+.btn--glow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: var(--glow-x);
+  width: 160px;
+  height: 160px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    #fffdf5 0%,
+    var(--crema) 22%,
+    var(--dorado) 42%,
+    rgba(231, 175, 103, .35) 62%,
+    rgba(231, 175, 103, 0) 78%
+  );
+  opacity: 0;
+  filter: blur(3px);
+  transition: opacity .25s ease-in-out;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.btn--glow:hover::before,
+.btn--glow:focus-visible::before {
+  opacity: .9;
+}
+
+/* Mantiene el texto/icono por encima del halo */
+.btn--glow > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Los estilos base de .btn ya traen transform en hover; con el halo activo
+   reforzamos ligeramente la sombra para dar sensación de "encendido". */
+.btn--glow:hover {
+  box-shadow: 0 8px 28px rgba(231, 175, 103, .35), 0 8px 24px rgba(0, 0, 0, .18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn--glow::before { transition: none; }
+}
+
+/* ---- NAVLINK--GLOW ----
+   Misma idea que .btn--glow (halo que sigue al cursor en X) pero adaptada
+   a la barra de menú, que va sobre fondo crema en vez de verde: el halo
+   dorado necesita cerrar en negativo (z-index:-1) para quedar DETRÁS del
+   texto en vez de taparlo, ya que aquí no hay un <span> envolviendo la
+   palabra del link. Ver js/cult-effects.js → initGlowButtons(). */
+.navlink--glow {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin: -6px -10px;
+  --glow-x: 50%;
+}
+
+.navlink--glow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: var(--glow-x);
+  width: 90px;
+  height: 90px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    #fffdf5 0%,
+    var(--dorado) 35%,
+    rgba(231, 175, 103, .4) 60%,
+    rgba(231, 175, 103, 0) 78%
+  );
+  opacity: 0;
+  filter: blur(2px);
+  transition: opacity .25s ease-in-out;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.navlink--glow:hover::before,
+.navlink--glow:focus-visible::before {
+  opacity: .85;
+}
+
+.navlink--glow:hover,
+.navlink--glow:focus-visible {
+  color: var(--negro);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navlink--glow::before { transition: none; }
+}
+
+/* ---- LOGO-CAROUSEL ----
+   Columnas de logos que ciclan (fade + slide + blur), estilo cult-ui.
+   Markup esperado:
+   <div class="logo-carousel">
+     <div class="logo-carousel__col">
+       <div class="logo-carousel__item is-active"><img src="..." alt="..."></div>
+       <div class="logo-carousel__item"><img src="..." alt="..."></div>
+       ...
+     </div>
+     ...
+   </div>
+   El ciclado lo controla js/cult-effects.js (initLogoCarousel). */
+.logo-carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 8px 0;
+}
+
+.logo-carousel__col {
+  position: relative;
+  width: 110px;
+  height: 60px;
+  overflow: hidden;
+}
+
+.logo-carousel__item {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(12%);
+  filter: blur(6px);
+  transition: opacity .4s ease, transform .4s cubic-bezier(.34, 1.56, .64, 1), filter .4s ease;
+}
+
+.logo-carousel__item.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.logo-carousel__item.is-leaving {
+  opacity: 0;
+  transform: translateY(-18%);
+  filter: blur(4px);
+  transition: opacity .3s ease-in, transform .3s ease-in, filter .3s ease-in;
+}
+
+.logo-carousel__item img {
+  max-width: 82%;
+  max-height: 82%;
+  object-fit: contain;
+  filter: grayscale(1) opacity(.72);
+  transition: filter .25s ease;
+}
+
+.logo-carousel__col:hover .logo-carousel__item img {
+  filter: grayscale(0) opacity(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-carousel__item {
+    transition: opacity .2s ease;
+    filter: none;
+    transform: none;
+  }
+}
