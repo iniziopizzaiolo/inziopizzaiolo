@@ -37,11 +37,16 @@
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.googletagmanager.com https://stats.g.doubleclick.net https://www.facebook.com; frame-src https://www.googletagmanager.com; frame-ancestors 'none'"
 
-# Cache largo para assets estáticos
+# Cache de assets estáticos. CSS/JS se referencian con ?v=YYYYMMDD en el HTML
+# (bump manual cuando cambie el contenido), así que "immutable" es seguro ahí:
+# cambiar el número de versión sirve una URL nueva y el visitante nunca ve la
+# copia vieja. Las imágenes NO llevan ese query string y a veces se reemplazan
+# manteniendo el mismo nombre de archivo, así que su caché es más corto y con
+# "must-revalidate" para que un reemplazo se vea en horas, no en un año.
 [[headers]]
   for = "/img/*"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=86400, must-revalidate"
 
 [[headers]]
   for = "/css/*"
