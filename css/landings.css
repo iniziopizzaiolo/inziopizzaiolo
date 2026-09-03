@@ -110,10 +110,10 @@
 .lp-catering .lp-breadcrumb a { color: rgba(254,238,193,0.6); }
 .lp-catering .lp-breadcrumb span { color: #E7AF67; }
 
-/* CENA — verde oscuro (ya es el default, reforzamos) */
-.lp-cena .lp-hero { background: #294C29; }
-.lp-cena .lp-stat-num { color: #E7AF67; }
-.lp-cena .lp-stat-label { color: rgba(254,238,193,0.6); }
+/* TEAM BUILDING — verde oscuro (ya es el default, reforzamos) */
+.lp-teambuilding .lp-hero { background: #294C29; }
+.lp-teambuilding .lp-stat-num { color: #E7AF67; }
+.lp-teambuilding .lp-stat-label { color: rgba(254,238,193,0.6); }
 
 /* CONSULTORÍA — dorado, tono premium/B2B */
 .lp-consultoria .lp-hero { background: #E7AF67 !important; }
@@ -161,17 +161,17 @@
 
 /* NAV color por sección */
 .lp-catering .nav,
-.lp-cena .nav,
+.lp-teambuilding .nav,
 .lp-taller .nav {
   background: #1a1a1a;
 }
 .lp-catering .nav .nav__links a,
-.lp-cena .nav .nav__links a,
+.lp-teambuilding .nav .nav__links a,
 .lp-taller .nav .nav__links a {
   color: #FEEEC1;
 }
 .lp-catering .nav .nav__links a:hover,
-.lp-cena .nav .nav__links a:hover,
+.lp-teambuilding .nav .nav__links a:hover,
 .lp-taller .nav .nav__links a:hover {
   color: #E7AF67;
 }
@@ -179,7 +179,7 @@
 /* HERO forzar color correcto por sección */
 .lp-taller .lp-hero { background: #FEEEC1 !important; }
 .lp-catering .lp-hero { background: #7F1100 !important; }
-.lp-cena .lp-hero { background: #294C29 !important; }
+.lp-teambuilding .lp-hero { background: #294C29 !important; }
 
 /* ÁREA DE SERVICIO — bloque full-bleed, mismo rojo teja que el hero de catering */
 .lp-area-servicio{background:#7F1100;padding:0;margin:4rem 0;border-radius:24px;overflow:hidden}
@@ -201,13 +201,13 @@
 /* NAV MOBILE — dropdown fondo oscuro en landings para que los links crema sean visibles */
 @media (max-width: 768px) {
   .lp-catering .nav__links,
-  .lp-cena .nav__links,
+  .lp-teambuilding .nav__links,
   .lp-taller .nav__links {
     background: #1a1a1a;
     border-bottom-color: rgba(231,175,103,.2);
   }
   .lp-catering .nav__links a,
-  .lp-cena .nav__links a,
+  .lp-teambuilding .nav__links a,
   .lp-taller .nav__links a {
     border-bottom-color: rgba(255,255,255,.08);
   }

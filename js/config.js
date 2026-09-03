@@ -105,11 +105,9 @@ const INIZIO = {
     // --- FOTOS ---
     { tipo: 'foto',  src: 'img/pizza-napolitana.jpg',                             alt: 'Pizza napolitana Inizio — borde alveolado y cornicione perfecto',         cat: 'Pizza'       },
     { tipo: 'foto',  src: 'img/galeria/taller-grupo-1.jpg',                       alt: 'Grupo disfrutando el taller de pizza napolitana',                         cat: 'Taller'      },
-    { tipo: 'foto',  src: 'img/galeria/cena-privada-1.jpg',                       alt: 'Cena privada Inizio — ambiente exclusivo Madrid',                         cat: 'Cena'        },
     { tipo: 'foto',  src: 'img/masa-bolas.jpg',                                   alt: 'Masa napolitana fermentada 48 horas',                                     cat: 'Técnica'     },
     { tipo: 'foto',  src: 'img/galeria/rodny-campeonato-accion.jpg',              alt: 'Rodny en plena competición mundial',                                      cat: 'Campeonato'  },
     { tipo: 'foto',  src: 'img/pizza-premium.jpg',                                alt: 'Margherita Inizio — receta de campeonato',                                cat: 'Pizza'       },
-    { tipo: 'foto',  src: 'img/galeria/cena-ambiente.jpg',                        alt: 'Ambiente cena distinta Inizio Madrid',                                    cat: 'Cena'        },
     { tipo: 'foto',  src: 'img/galeria/taller-grupo-2.jpg',                       alt: 'Taller Inizio — el grupo aprende junt@s',                                 cat: 'Taller'      },
     { tipo: 'foto',  src: 'img/galeria/pizza-cebolla-mozzarella.jpg',             alt: 'Pizza con cebolla caramelizada y mozzarella fior di latte',               cat: 'Pizza'       },
     { tipo: 'foto',  src: 'img/galeria/pizza-tomate-cherry.jpg',                  alt: 'Pizza con tomate cherry fresco y albahaca',                               cat: 'Pizza'       },
@@ -120,8 +118,6 @@ const INIZIO = {
     { tipo: 'foto',  src: 'img/galeria/taller-trabajo-masa.jpg',                  alt: 'Trabajo de masa — técnica napolitana paso a paso',                        cat: 'Taller'      },
     { tipo: 'foto',  src: 'img/campeonato/rodny-campeonato-pizza-aceite-2025.jpg',alt: 'Rodny en el Campeonato Mundial Pizza DOC 2025 — aceite de oliva',         cat: 'Campeonato'  },
     { tipo: 'foto',  src: 'img/galeria/taller-grupo-risas-copa.jpg',              alt: 'Grupo disfrutando del taller — risas y brindis al final',                 cat: 'Taller'      },
-    { tipo: 'foto',  src: 'img/galeria/cena-mesa-setup-elegante.jpg',             alt: 'Mesa elegante de la Cena Distinta Inizio Madrid',                        cat: 'Cena'        },
-    { tipo: 'foto',  src: 'img/galeria/rodny-retrato-cena-chaqueta.jpg',          alt: 'Rodny López — retrato elegante para la Cena Distinta',                   cat: 'Chef'        },
     { tipo: 'foto',  src: 'img/galeria/taller-grupo-foto-final-2.jpg',            alt: 'Foto final del grupo del taller con Rodny',                              cat: 'Taller'      },
     { tipo: 'foto',  src: 'img/galeria/taller-brindis-copa.jpg',                  alt: 'Brindis y celebración al final del taller Inizio',                       cat: 'Taller'      },
 
