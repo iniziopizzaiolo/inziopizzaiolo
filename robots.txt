@@ -1,4 +1,22 @@
 User-agent: *
 Allow: /
 
+# Permiso explícito a los crawlers de IA que alimentan respuestas y citas
+# (ChatGPT, Perplexity, Claude...). Ya estaban permitidos por el wildcard
+# de arriba — esto es solo para que quede documentado que es intencional.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://iniziopizzaiolo.com/sitemap.xml
