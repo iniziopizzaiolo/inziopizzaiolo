@@ -357,9 +357,7 @@
 }
 .quien-rodny__img {
   width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
   border-radius: 16px;
   box-shadow: 0 24px 64px rgba(0,0,0,.4);
 }
@@ -769,7 +767,6 @@
 @media (max-width: 900px) {
   .quien-rodny__grid { grid-template-columns: 1fr; gap: 40px; }
   .quien-rodny__badge { right: 16px; bottom: 16px; }
-  .quien-rodny__img { aspect-ratio: 4/3; }
   .galeria-home__bento {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 220px 220px 220px;
