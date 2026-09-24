@@ -77,7 +77,7 @@ const INIZIO = {
   redes: {
     instagram_inizio:   'iniziorp',
     instagram_personal: 'rodnypizzaiolo',
-    tiktok:             '',       // ej: 'iniziorp'
+    tiktok:             'iniziorp',
     facebook:           '',       // ej: 'iniziomadrid'
     youtube:            '',       // ej: '@iniziorp'
     airbnb:             '',       // URL completa de tu experiencia en Airbnb

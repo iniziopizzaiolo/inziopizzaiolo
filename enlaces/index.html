@@ -246,6 +246,16 @@
       from { opacity: 0; transform: translateY(14px); }
       to   { opacity: 1; transform: translateY(0); }
     }
+
+    .sr-only {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
   </style>
 </head>
 
@@ -253,6 +263,7 @@
 <div class="wrap">
 
   <div class="header">
+    <h1 class="sr-only">Rodny López — Inizio Pizzaiolo, Madrid</h1>
     <img class="logo-img" src="/img/logo-manito.jpg" alt="Inizio Pizzaiolo"/>
     <p class="name">Rodny López</p>
     <p class="tagline">Maestro Pizzaiolo · Madrid</p>
