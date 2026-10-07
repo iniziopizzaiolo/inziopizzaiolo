@@ -310,6 +310,11 @@ function _abs(path) {
   return '/' + path;
 }
 
+function _imgCdn(path, w, q) {
+  // Misma optimización (resize + WebP) que usa el resto del sitio vía Netlify Image CDN
+  return `/.netlify/images?url=${_abs(path)}&w=${w}&fm=webp&q=${q}`;
+}
+
 function renderGaleria(containerId, maxItems) {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -324,7 +329,7 @@ function renderGaleria(containerId, maxItems) {
   container.innerHTML = items.map((item, i) => {
     const eager  = i < 2;
     const isVideo = item.tipo === 'video';
-    const src     = _abs(item.src);
+    const src     = isVideo ? _abs(item.src) : _imgCdn(item.src, 900, 80);
     const poster  = _abs(item.poster || '');
     const media   = isVideo
       ? `<video autoplay muted loop playsinline preload="metadata"
@@ -428,7 +433,7 @@ function _renderLbItem() {
   } else {
     wrap.innerHTML = `<img
       style="max-width:90vw;max-height:86vh;object-fit:contain;display:block;border-radius:4px;"
-      src="${_abs(item.src)}" alt="${item.alt}">`;
+      src="${_imgCdn(item.src, 1600, 85)}" alt="${item.alt}">`;
   }
   if (counter) counter.textContent = `${_lbIndex + 1} / ${_lbItems.length}`;
 }
