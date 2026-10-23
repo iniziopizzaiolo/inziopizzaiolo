@@ -21,7 +21,10 @@
   <meta name="twitter:description" content="No vienes solo a comer pizza. Aprende, crea y vive algo único con Rodny López, pizzaiolo profesional.">
   <meta name="twitter:image" content="https://iniziopizzaiolo.com/img/hero-campeonato.jpg">
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon-192.png">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <!-- Schema JSON-LD -->
   <script type="application/ld+json">
   {
@@ -203,7 +206,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Fredoka:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=20260828">
   <link rel="stylesheet" href="css/extra.css?v=20260828">
   <link rel="stylesheet" href="css/cult-effects.css?v=20260828">
@@ -241,6 +244,8 @@
   <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=1017889490582215&ev=PageView&noscript=1"/></noscript>
   <!-- End Meta Pixel -->
+  <link rel="stylesheet" href="/css/lemon-milk.css?v=20261023">
+  <link rel="stylesheet" href="/css/header-ux.css?v=20261025">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -251,26 +256,20 @@
   <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#hero" class="nav__logo">
-        <img src="/img/brand/logo-transparente.png" alt="Inizio" class="logo-svg" width="1666" height="851">
+      <a href="/" class="nav__logo" aria-label="Inizio Pizzaiolo — inicio">
+        <img src="/img/brand/v2/logo-arco-burdeos.svg" alt="Inizio Pizzaiolo" class="logo-svg" width="1265" height="707">
       </a>
       <button class="nav__toggle" id="navToggle" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links" id="navLinks">
-        <li><a href="taller/" class="navlink--glow">Taller</a></li>
-        <li><a href="catering/" class="navlink--glow">Catering</a></li>
-        <li><a href="team-building/" class="navlink--glow">Team Building</a></li>
-        <li><a href="sobre-rodny/" class="navlink--glow">Sobre Rodny</a></li>
-        <li><a href="galeria/" class="navlink--glow">Galería</a></li>
-        <li><a href="consultoria/" class="navlink--glow">Consultoría</a></li>
-        <li><a href="#contacto" class="navlink--glow">Contacto</a></li>
-        <li>
-          <a href="https://wa.me/34614364778?text=Hola!%20Quiero%20información%20sobre%20Inizio"
-             class="btn btn--nav" target="_blank" rel="noopener">
-            WhatsApp
-          </a>
-        </li>
+        <li><a href="/taller/" class="navlink--glow">Taller</a></li>
+        <li><a href="/catering/" class="navlink--glow">Catering</a></li>
+        <li><a href="/team-building/" class="navlink--glow">Team Building</a></li>
+        <li><a href="/sobre-rodny/" class="navlink--glow">Sobre Rodny</a></li>
+        <li><a href="/galeria/" class="navlink--glow">Galería</a></li>
+        <li><a href="/consultoria/" class="navlink--glow">Consultoría</a></li>
+        <li><a href="/#contacto" class="navlink--glow">Contacto</a></li>
       </ul>
     </div>
   </nav>
@@ -279,12 +278,19 @@
   <section class="hero" id="hero">
     <div class="hero__bg">
       <!-- Vídeo de fondo (desktop). En móvil o prefers-reduced-motion se oculta con CSS y aparece la imagen. -->
-      <video class="hero__bg-video" autoplay muted loop playsinline
+      <video class="hero__bg-video" id="heroVideo" muted loop playsinline
              poster="/img/hero-campeonato.jpg"
              preload="none"
-             aria-hidden="true">
-        <source src="/video/rodny-freestyle-campeonato.mp4" type="video/mp4">
-      </video>
+             aria-hidden="true"></video>
+      <script>
+        /* El vídeo solo se descarga en escritorio y sin "reducir movimiento": en móvil se queda la imagen (ahorra ~2 MB). */
+        (function () {
+          var v = document.getElementById('heroVideo');
+          if (!v || !window.matchMedia('(min-width: 769px) and (prefers-reduced-motion: no-preference)').matches) return;
+          v.src = '/video/rodny-freestyle-campeonato.mp4';
+          v.play().catch(function () {});
+        })();
+      </script>
       <img src="/.netlify/images?url=/img/hero-campeonato.jpg&w=1600&fm=webp&q=85"
            alt="Rodny López en Campionato Mondiale Pizza DOC"
            class="hero__bg-img"
@@ -293,7 +299,6 @@
       <div class="hero__bg-overlay"></div>
     </div>
     <div class="hero__content">
-      <img src="/img/brand/logo-dorado.png" alt="Inizio" class="hero__logo" width="1666" height="851">
       <h1 class="hero__headline">
         Pizza napolitana de campeonato.<br>En Madrid.
       </h1>
@@ -328,9 +333,9 @@
       <div class="quien-rodny__grid">
         <div class="quien-rodny__img-wrap">
           <img class="quien-rodny__img"
-               src="/.netlify/images?url=/img/rodny-pizza-en-directo.jpg&w=720&fm=webp&q=85"
-               alt="Rodny López elaborando pizza en directo delante de los invitados en un catering de Inizio"
-               loading="lazy" width="1536" height="2730">
+               src="/.netlify/images?url=/img/rodny-catering-pizza-volando.jpg&w=720&fm=webp&q=85"
+               alt="Rodny López lanzando una masa tricolor al aire durante un show de pizza en directo de Inizio"
+               loading="lazy" width="943" height="1668">
           <div class="quien-rodny__badge">
             <strong>20+</strong>
             pizzas<br>mínimo
@@ -378,7 +383,7 @@
 
         <div class="formato-card">
           <div class="formato-card__img">
-            <img src="/.netlify/images?url=/img/taller-ensenando.jpg&w=1400&fm=webp&q=80" alt="Taller de pizza napolitana" loading="lazy" width="1536" height="2730">
+            <img src="/.netlify/images?url=/img/taller-grupo-delantales-rojos.jpg&w=1000&fm=webp&q=82" alt="Grupo con delantales rojos y Rodny López en el taller de pizza napolitana de Inizio" loading="lazy" width="1320" height="852">
             <span class="formato-card__tag">Taller</span>
           </div>
           <div class="formato-card__content">
@@ -738,7 +743,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <img src="/img/brand/logo-transparente.png" alt="Inizio" class="footer__logo" width="1666" height="851">
+      <img src="/img/brand/v2/logo-arco-blanco.svg" alt="Inizio Pizzaiolo" class="footer__logo" width="1265" height="707">
       <p class="footer__tagline">Pizza, negocio y libertad.</p>
       <div class="footer__social">
         <a href="https://instagram.com/iniziorp" target="_blank" rel="noopener">@iniziorp</a>
@@ -781,7 +786,7 @@
     <div class="lightbox__counter" id="lb-counter"></div>
   </div>
 
-  <script src="js/config.js?v=20261007"></script>
+  <script src="js/config.js?v=20261025"></script>
   <script src="js/main.js?v=20260828"></script>
   <script src="js/cult-effects.js?v=20260828"></script>
 </body>

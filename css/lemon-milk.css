@@ -1,0 +1,43 @@
+/* PRUEBA (rama logo-test) — tipografía Lemon Milk para encabezados.
+   Licencia donationware: donar antes de publicar. Solo mayúsculas. */
+@font-face { font-family: 'Lemon Milk'; src: url('/fonts/LEMONMILK-Bold.otf') format('opentype'); font-weight: 700; font-display: swap; }
+@font-face { font-family: 'Lemon Milk'; src: url('/fonts/LEMONMILK-Medium.otf') format('opentype'); font-weight: 500; font-display: swap; }
+
+/* h2/h3/h4 y etiquetas; h1 y artículos del blog quedan en Cormorant */
+h2, h3, h4,
+.section__label, .lp-label, .lp-card-tag, .lp-hero-tag {
+  font-family: 'Lemon Milk', 'Inter', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  line-height: 1.25;
+}
+.section__label, .lp-label, .lp-card-tag, .lp-hero-tag { font-weight: 500; letter-spacing: .12em; }
+.articulo-single__body h2, .articulo-single__header h1, .articulo-card h3, .legal-content h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif; text-transform: none; letter-spacing: normal; font-weight: 600;
+}
+/* logos nuevos: un poco más altos para que se lea PIZZAIOLO */
+.nav__logo img { height: 46px; }
+.hero__logo { height: 190px; }
+.footer__logo { height: 70px; }
+
+/* Títulos con clase propia (tenían Cormorant): misma tipografía, tamaño ~62% por el ancho de Lemon Milk */
+.lp-title, .lp-cta h2, .lp-area-servicio__titulo, .contacto__title, .quien-rodny__titulo,
+.consultoria-banner__title, .pilar h3, .lp-card h3, .lp-paso h3, .articulo-cta h3,
+.stat__num, .lp-stat-num, .cred-item strong, .precio__num, .quien-rodny__badge strong {
+  font-family: 'Lemon Milk', 'Inter', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: .02em;
+}
+h2 { font-size: clamp(1.25rem, 2.6vw, 1.9rem); }
+h3 { font-size: 1.05rem; }
+h4 { font-size: .95rem; }
+.lp-title, .lp-area-servicio__titulo { font-size: clamp(1.15rem, 2.3vw, 1.7rem); }
+.lp-cta h2 { font-size: clamp(1.15rem, 2vw, 1.7rem); }
+.contacto__title { font-size: clamp(1.3rem, 2.6vw, 1.8rem); }
+.quien-rodny__titulo { font-size: clamp(1.5rem, 2.9vw, 2.2rem); }
+.consultoria-banner__title { font-size: clamp(1rem, 1.9vw, 1.35rem); }
+.pilar h3, .lp-card h3 { font-size: .95rem; }
+.lp-paso h3, .articulo-cta h3 { font-size: .85rem; }
+.stat__num, .cred-item strong { font-size: 1.4rem; }
+.lp-stat-num { font-size: 1.2rem; }
+.precio__num { font-size: 2.2rem; }
+.hero__headline em, h2 em { font-family: 'Lemon Milk', 'Inter', sans-serif; font-style: normal !important; }

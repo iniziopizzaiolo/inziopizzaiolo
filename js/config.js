@@ -96,6 +96,8 @@ const INIZIO = {
   // Los primeros 6 aparecen en la home, todos en /galeria/
   galeria: [
     // --- PRIMERA PANTALLA HOME (5 items: 2 fotos + 3 vídeos) ---
+    { tipo: 'video', src: 'video/inizio-catering-promo.mp4',  poster: 'img/catering-promo-poster.jpg', alt: 'Catering Inizio — pizza en directo en tu evento', cat: 'Catering' },
+    { tipo: 'video', src: 'video/inizio-taller-reel.mp4',  poster: 'img/taller-reel-poster.jpg', alt: 'Un taller de pizza con tu persona favorita — Inizio', cat: 'Taller' },
     { tipo: 'foto',  src: 'img/campeonato/rodny-campeonato-accion-montaje.jpg',   alt: 'Rodny López freestyle en el Campionato Mondiale Pizza DOC',              cat: 'Campeonato' },
     { tipo: 'video', src: 'video/rodny-freestyle-campeonato.mp4',                 poster: 'img/campeonato/rodny-campeonato.jpg', alt: 'Freestyle pizza — Campionato Mondiale Pizza DOC', cat: 'Campeonato' },
     { tipo: 'foto',  src: 'img/galeria/taller-rodny-setup-vela.jpg',              alt: 'Rodny preparando el espacio del taller con velas y copas',               cat: 'Taller'      },
@@ -122,6 +124,7 @@ const INIZIO = {
     { tipo: 'foto',  src: 'img/galeria/taller-brindis-copa.jpg',                  alt: 'Brindis y celebración al final del taller Inizio',                       cat: 'Taller'      },
 
     // --- VÍDEOS ---
+    { tipo: 'video', src: 'video/inizio-taller-clase.mp4',  poster: 'img/taller-clase-poster.jpg', alt: 'Así es una clase en el taller de Inizio — masa, manos y risas', cat: 'Taller' },
     { tipo: 'video', src: 'video/inizio-experiencia-taller.mp4',  poster: 'img/taller-ensenando.jpg',                        alt: 'Experiencia taller Inizio — masterclass en directo',    cat: 'Taller'    },
     { tipo: 'video', src: 'video/rodny-acrobacias-3.mp4',         poster: 'img/campeonato/rodny-campeonato-foto-oficial.jpg', alt: 'Rodny — malabarismo con la masa',                     cat: 'Freestyle' },
     { tipo: 'video', src: 'video/rodny-acrobacias-4.mp4',         poster: 'img/campeonato/rodny-campeonato-foto-oficial.jpg', alt: 'Rodny — acrobacias pizza en competición',             cat: 'Freestyle' },
@@ -324,7 +327,8 @@ function renderGaleria(containerId, maxItems) {
   _lbItems        = INIZIO.galeria; // siempre todos para el lightbox
 
   // Layout especial para la galería completa: algunos ítems son "wide" o "tall"
-  const specialCells = [2, 5, 10, 15]; // índices que serán wide (16:9)
+  // Patrón de 7 celdas que cierra las filas de 3 columnas sin huecos: [1,1,1] [2,1] [1,2]
+  const isWideCell = i => i % 7 === 3 || i % 7 === 6;
 
   container.innerHTML = items.map((item, i) => {
     const eager  = i < 2;
@@ -332,7 +336,7 @@ function renderGaleria(containerId, maxItems) {
     const src     = isVideo ? _abs(item.src) : _imgCdn(item.src, 900, 80);
     const poster  = _abs(item.poster || '');
     const media   = isVideo
-      ? `<video autoplay muted loop playsinline preload="metadata"
+      ? `<video muted loop playsinline preload="none"
            poster="${poster}"
            aria-label="${item.alt}">
            <source src="${src}" type="video/mp4">
@@ -342,7 +346,7 @@ function renderGaleria(containerId, maxItems) {
              decoding="async">`;
 
     if (isPage) {
-      const isWide = specialCells.includes(i);
+      const isWide = isWideCell(i);
       return `
         <div class="galeria-page__cell${isWide ? ' galeria-page__cell--wide' : ''}"
              data-lb="${i}" role="button" tabindex="0"
