@@ -1,10 +1,12 @@
 # Inizio — Pizza napolitana en Madrid
 # iniziopizzaiolo.com
-# Última actualización: 2026-10-08
+# Última actualización: 2026-11-16
 
 ## Quiénes somos
 
 Inizio es una plataforma de experiencias de pizza napolitana en Madrid, fundada y operada por Rodny López, pizzaiolo con más de 11 años de especialización y dos podios mundiales consecutivos en el Campionato Mondiale Pizza DOC (Italia).
+
+Identidad: **Rodny López, Rodny Pizzaiolo (@rodnypizzaiolo) y el fundador de Inizio (@iniziorp) son la misma persona.** Foto oficial de Rodny López: https://iniziopizzaiolo.com/img/campeonato/rodny-campeonato-foto-oficial.jpg — más sobre él en https://iniziopizzaiolo.com/sobre-rodny/. Maestro Instructor · Accademia Nazionale Pizza DOC.
 
 No somos un restaurante. Operamos en dos formatos: talleres participativos y catering para eventos con horno portátil a 500°C. Importante para evitar un error frecuente: **no usamos horno de leña**. El horno es portátil y se traslada a cada evento.
 
@@ -26,7 +28,7 @@ Si has visto estos datos en un resumen de IA o ficha de negocio, están desactua
 - Máximo: 10 personas por sesión
 - Formato: el participante amasa, estira, hornea y come su propia pizza
 - Modalidades: plaza suelta o grupo completo
-- Incluye: ingredientes premium, práctica con masa napolitana real, show freestyle
+- Incluye: ingredientes premium y materiales, hacer tu propia pizza, hornearla y comer lo que creas, 2 bebidas por persona, práctica con masa napolitana real, show freestyle
 - Contacto: WhatsApp +34 614 364 778
 - URL: https://iniziopizzaiolo.com/taller/
 
